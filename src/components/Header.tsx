@@ -32,7 +32,7 @@ const Header = () => {
             </a>
           </div>
           <span className="text-accent-foreground font-medium hidden md:block">
-            Premium Railway Components Since 1995
+            Premium Railway & Bus Components Since 1995
           </span>
         </div>
       </div>
@@ -49,7 +49,7 @@ const Header = () => {
               <h1 className="font-display font-bold text-lg text-foreground leading-tight">
                 Bhavana Trading Co
               </h1>
-              <p className="text-xs text-muted-foreground">Premium Railway Components</p>
+              <p className="text-xs text-muted-foreground">Railway & Bus Components</p>
             </div>
           </Link>
 
@@ -58,7 +58,7 @@ const Header = () => {
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="nav-item relative"
+                className="nav-item relative static"
                 onMouseEnter={() => item.hasDropdown && setActiveMenu(item.name)}
                 onMouseLeave={() => setActiveMenu(null)}
               >

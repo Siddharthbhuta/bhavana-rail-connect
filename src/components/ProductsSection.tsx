@@ -3,32 +3,32 @@ import { Link } from 'react-router-dom';
 import productBogie from '@/assets/product-bogie.jpg';
 import productCoupler from '@/assets/product-coupler.jpg';
 import productBrake from '@/assets/product-brake.jpg';
-import productSuspension from '@/assets/product-suspension.jpg';
+import productBus from '@/assets/product-bus.jpg';
 
 const products = [
   {
-    name: 'Bogie Components',
-    description: 'Complete wheel sets, axle boxes, and bogie frame assemblies engineered for heavy-duty operations.',
+    name: 'Railway Bogies',
+    description: 'Complete wheel sets, axle boxes, and bogie frame assemblies engineered for heavy-duty railway operations.',
     image: productBogie,
-    category: 'Rolling Stock',
+    category: 'Railway',
   },
   {
     name: 'Couplers & Draft Gear',
     description: 'AAR-compliant coupling systems designed for maximum safety and durability.',
     image: productCoupler,
-    category: 'Coupling Systems',
+    category: 'Railway',
+  },
+  {
+    name: 'Bus Components',
+    description: 'Heavy-duty chassis parts, axle assemblies, and body fittings for commercial buses.',
+    image: productBus,
+    category: 'Bus',
   },
   {
     name: 'Brake Systems',
     description: 'Precision braking components including shoes, cylinders, and control valves.',
     image: productBrake,
     category: 'Safety Systems',
-  },
-  {
-    name: 'Suspension Parts',
-    description: 'Advanced suspension solutions for smooth operations and passenger comfort.',
-    image: productSuspension,
-    category: 'Suspension',
   },
 ];
 
@@ -40,11 +40,11 @@ const ProductsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Products</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
-            Precision-Engineered Railway Components
+            Precision-Engineered Railway & Bus Components
           </h2>
           <p className="text-muted-foreground text-lg">
-            From locomotive parts to coach fittings, we manufacture a comprehensive range 
-            of railway components meeting RDSO specifications and international standards.
+            From locomotive parts to bus chassis, we manufacture a comprehensive range 
+            of components meeting RDSO specifications and international standards.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ const ProductsSection = () => {
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
                 <span className="absolute top-4 left-4 px-3 py-1 bg-accent/90 text-accent-foreground text-xs font-medium rounded-full">
                   {product.category}
                 </span>

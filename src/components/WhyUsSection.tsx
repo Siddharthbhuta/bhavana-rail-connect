@@ -42,12 +42,12 @@ const WhyUsSection = () => {
           <div>
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
             <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
-              Trusted by Railways Across India
+              Trusted by Railways & Bus Manufacturers
             </h2>
             <p className="text-muted-foreground text-lg mb-8">
-              With over 25 years of experience in railway component manufacturing, 
+              With over 25 years of experience in railway and bus component manufacturing, 
               Bhavana Trading Co has established itself as a reliable partner for 
-              Indian Railways and private rolling stock manufacturers.
+              Indian Railways, bus manufacturers, and private operators.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-6">

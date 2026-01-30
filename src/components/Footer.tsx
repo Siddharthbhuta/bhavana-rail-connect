@@ -6,10 +6,10 @@ const Footer = () => {
 
   const footerLinks = {
     products: [
-      { name: 'Bogie Components', href: '/products/bogie' },
+      { name: 'Railway Bogies', href: '/products/bogie' },
+      { name: 'Bus Components', href: '/products/bus' },
       { name: 'Couplers & Draft Gear', href: '/products/couplers' },
       { name: 'Brake Systems', href: '/products/brakes' },
-      { name: 'Suspension Parts', href: '/products/suspension' },
       { name: 'All Products', href: '/products' },
     ],
     company: [
@@ -40,11 +40,11 @@ const Footer = () => {
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg text-foreground">Bhavana Trading Co</h3>
-                <p className="text-xs text-muted-foreground">Premium Railway Components</p>
+                <p className="text-xs text-muted-foreground">Railway & Bus Components</p>
               </div>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
-              India's trusted manufacturer of premium railway and train components. 
+              India's trusted manufacturer of premium railway and bus components. 
               Delivering quality and reliability since 1995.
             </p>
             <div className="flex gap-4">
