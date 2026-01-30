@@ -29,20 +29,20 @@ const HeroSection = () => {
           <div className="space-y-8">
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/10">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm text-accent font-medium">India's Trusted Railway Partner</span>
+              <span className="text-sm text-accent font-medium">India's Trusted Railway & Bus Partner</span>
             </div>
 
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
               <span className="text-gradient-accent">Premium Quality</span>
               <br />
-              Railway & Train
+              Railway & Bus
               <br />
               Components
             </h1>
 
             <p className="text-lg text-muted-foreground max-w-xl">
-              Engineering excellence for Indian Railways and private operators. 
-              From bogies to brakes, we deliver precision-manufactured components 
+              Engineering excellence for Indian Railways, bus manufacturers, and private operators. 
+              From bogies to chassis, we deliver precision-manufactured components 
               that meet the highest safety standards.
             </p>
 
