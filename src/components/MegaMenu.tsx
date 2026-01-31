@@ -38,11 +38,8 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-2 gap-8">
               {/* Bus Components Box */}
-              <Link 
-                to="/products/bus" 
-                className="group block rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="relative h-40 overflow-hidden">
+              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+                <Link to="/products/bus" className="block relative h-40 overflow-hidden">
                   <img
                     src={productBus}
                     alt="Bus Components"
@@ -57,7 +54,7 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                       Bus Components
                     </h3>
                   </div>
-                </div>
+                </Link>
                 <div className="p-4 bg-secondary/30">
                   <ul className="space-y-2">
                     {busCategories.map((item) => (
@@ -65,7 +62,6 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                         <Link
                           to={`/products/bus/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -74,14 +70,11 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                     ))}
                   </ul>
                 </div>
-              </Link>
+              </div>
 
               {/* Train Components Box */}
-              <Link 
-                to="/products/train" 
-                className="group block rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
-              >
-                <div className="relative h-40 overflow-hidden">
+              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+                <Link to="/products/train" className="block relative h-40 overflow-hidden">
                   <img
                     src={heroRailway}
                     alt="Train Components"
@@ -96,7 +89,7 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                       Train Components
                     </h3>
                   </div>
-                </div>
+                </Link>
                 <div className="p-4 bg-secondary/30">
                   <ul className="space-y-2">
                     {trainCategories.map((item) => (
@@ -104,7 +97,6 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                         <Link
                           to={`/products/train/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
-                          onClick={(e) => e.stopPropagation()}
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -113,11 +105,11 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
                     ))}
                   </ul>
                 </div>
-              </Link>
+              </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-border text-center">
-              <Link to="/products" className="btn-primary text-sm py-2 px-6">
+              <Link to="/products" className="btn-primary text-sm py-2 px-6 inline-block">
                 View All Products
               </Link>
             </div>
