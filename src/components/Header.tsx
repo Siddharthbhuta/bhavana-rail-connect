@@ -58,7 +58,7 @@ const Header = () => {
             {navItems.map((item) => (
               <div
                 key={item.name}
-                className="nav-item relative static"
+                className="nav-item relative"
                 onMouseEnter={() => item.hasDropdown && setActiveMenu(item.name)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
@@ -69,13 +69,19 @@ const Header = () => {
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
                 </Link>
-                
-                {item.hasDropdown && activeMenu === item.name && (
-                  <MegaMenu type={item.name} />
-                )}
               </div>
             ))}
           </div>
+
+          {/* Mega Menu rendered outside nav items */}
+          {activeMenu && (
+            <div
+              onMouseEnter={() => setActiveMenu(activeMenu)}
+              onMouseLeave={() => setActiveMenu(null)}
+            >
+              <MegaMenu type={activeMenu} />
+            </div>
+          )}
 
           {/* CTA Button */}
           <div className="hidden lg:block">
