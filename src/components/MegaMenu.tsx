@@ -1,51 +1,26 @@
 import { Link } from 'react-router-dom';
-import { Train, Bus, Cog, Users, Building2, Award, FileText } from 'lucide-react';
-import productBogie from '@/assets/product-bogie.jpg';
-import productCoupler from '@/assets/product-coupler.jpg';
-import productBrake from '@/assets/product-brake.jpg';
-import productSuspension from '@/assets/product-suspension.jpg';
+import { Train, Bus, Users, Building2, Award, FileText } from 'lucide-react';
 import productBus from '@/assets/product-bus.jpg';
+import heroRailway from '@/assets/hero-railway.jpg';
 
 interface MegaMenuProps {
   type: string;
 }
 
-const productCategories = [
-  {
-    name: 'Railway Bogies',
-    description: 'Complete bogie assemblies and wheel sets',
-    image: productBogie,
-    icon: Train,
-    items: ['Wheel Sets', 'Axle Boxes', 'Primary Springs', 'Bogie Frames'],
-  },
-  {
-    name: 'Couplers & Draft Gear',
-    description: 'High-strength coupling systems',
-    image: productCoupler,
-    icon: Cog,
-    items: ['AAR Couplers', 'Draft Gear', 'Yokes', 'Knuckles'],
-  },
-  {
-    name: 'Bus Components',
-    description: 'Heavy-duty commercial vehicle parts',
-    image: productBus,
-    icon: Bus,
-    items: ['Chassis Parts', 'Axle Assemblies', 'Steering Components', 'Body Fittings'],
-  },
-  {
-    name: 'Brake Systems',
-    description: 'Precision braking components',
-    image: productBrake,
-    icon: Cog,
-    items: ['Brake Shoes', 'Brake Cylinders', 'Slack Adjusters', 'Control Valves'],
-  },
-  {
-    name: 'Suspension Parts',
-    description: 'Advanced suspension solutions',
-    image: productSuspension,
-    icon: Cog,
-    items: ['Coil Springs', 'Dampers', 'Rubber Bushings', 'Anti-roll Bars'],
-  },
+const busCategories = [
+  'Body Panels and Doors',
+  'Doors and Windows',
+  'Roof Components',
+  'Seating Systems',
+  'Interior Fixtures',
+];
+
+const trainCategories = [
+  'Bogie Assemblies',
+  'Coupling Systems',
+  'Brake Systems',
+  'Safety Equipment',
+  'Specialized Parts',
 ];
 
 const aboutItems = [
@@ -60,50 +35,89 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
     return (
       <div className="fixed left-0 right-0 top-[132px] z-50 opacity-100 visible transition-all duration-300 ease-out">
         <div className="bg-background border-b border-border shadow-2xl">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-5 gap-6">
-              {productCategories.map((category) => (
-                <div key={category.name} className="group">
-                  <div className="overflow-hidden rounded-lg mb-4 border border-border/50">
-                    <img
-                      src={category.image}
-                      alt={category.name}
-                      className="w-full h-32 object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
-                  </div>
-                  <div className="flex items-start gap-2">
-                    <div className="w-8 h-8 rounded-md bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      <category.icon className="w-4 h-4 text-accent" />
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-2 gap-8">
+              {/* Bus Components Box */}
+              <Link 
+                to="/products/bus" 
+                className="group block rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={productBus}
+                    alt="Bus Components"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <Bus className="w-5 h-5 text-accent-foreground" />
                     </div>
-                    <div>
-                      <h3 className="font-display font-semibold text-sm text-foreground mb-1 group-hover:text-accent transition-colors">
-                        {category.name}
-                      </h3>
-                      <p className="text-xs text-muted-foreground mb-2">
-                        {category.description}
-                      </p>
-                      <ul className="space-y-1">
-                        {category.items.map((item) => (
-                          <li key={item}>
-                            <Link
-                              to={`/products/${item.toLowerCase().replace(/\s+/g, '-')}`}
-                              className="text-xs text-muted-foreground hover:text-accent transition-colors"
-                            >
-                              {item}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                    <h3 className="font-display font-bold text-lg text-foreground">
+                      Bus Components
+                    </h3>
                   </div>
                 </div>
-              ))}
+                <div className="p-4 bg-secondary/30">
+                  <ul className="space-y-2">
+                    {busCategories.map((item) => (
+                      <li key={item}>
+                        <Link
+                          to={`/products/bus/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
+
+              {/* Train Components Box */}
+              <Link 
+                to="/products/train" 
+                className="group block rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg"
+              >
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={heroRailway}
+                    alt="Train Components"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <Train className="w-5 h-5 text-accent-foreground" />
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-foreground">
+                      Train Components
+                    </h3>
+                  </div>
+                </div>
+                <div className="p-4 bg-secondary/30">
+                  <ul className="space-y-2">
+                    {trainCategories.map((item) => (
+                      <li key={item}>
+                        <Link
+                          to={`/products/train/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
+                          onClick={(e) => e.stopPropagation()}
+                        >
+                          <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                          {item}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Link>
             </div>
-            <div className="mt-8 pt-6 border-t border-border flex items-center justify-between">
-              <p className="text-muted-foreground text-sm">
-                <span className="text-accent font-semibold">500+</span> components for railway and bus applications
-              </p>
-              <Link to="/products" className="btn-primary text-sm py-2 px-4">
+
+            <div className="mt-6 pt-4 border-t border-border text-center">
+              <Link to="/products" className="btn-primary text-sm py-2 px-6">
                 View All Products
               </Link>
             </div>
