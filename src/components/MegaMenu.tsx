@@ -16,6 +16,7 @@ const busCategories = [
   'Roof Components',
   'Seating Systems',
   'Interior Fixtures',
+  'Additional Components',
 ];
 
 const trainCategories = [
@@ -23,7 +24,8 @@ const trainCategories = [
   'Coupling Systems',
   'Brake Systems',
   'Safety Equipment',
-  'Specialized Parts',
+  'Specialized Parts and Assemblies',
+  'Miscellaneous Components',
 ];
 
 const aboutItems = [

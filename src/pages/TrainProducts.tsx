@@ -26,9 +26,14 @@ const trainCategories = [
     description: 'Emergency systems, signaling components, and safety devices',
   },
   {
-    name: 'Specialized Parts',
-    slug: 'specialized-parts',
+    name: 'Specialized Parts and Assemblies',
+    slug: 'specialized-parts-and-assemblies',
     description: 'Custom engineered components for specific railway applications',
+  },
+  {
+    name: 'Miscellaneous Components',
+    slug: 'miscellaneous-components',
+    description: 'Springs and bolts, wear plates, fasteners, gaskets and seals',
   },
 ];
 
