@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ChevronDown, Menu, X, Phone, Mail, Train } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
@@ -6,6 +6,26 @@ import MegaMenu from './MegaMenu';
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const closeTimerRef = useRef<number | null>(null);
+
+  const cancelScheduledClose = () => {
+    if (closeTimerRef.current) {
+      window.clearTimeout(closeTimerRef.current);
+      closeTimerRef.current = null;
+    }
+  };
+
+  const openMenu = (menuName: string) => {
+    cancelScheduledClose();
+    setActiveMenu(menuName);
+  };
+
+  const scheduleCloseMenu = () => {
+    cancelScheduledClose();
+    closeTimerRef.current = window.setTimeout(() => {
+      setActiveMenu(null);
+    }, 160);
+  };
 
   const navItems = [
     { name: 'Home', href: '/', hasDropdown: false },
@@ -59,8 +79,8 @@ const Header = () => {
               <div
                 key={item.name}
                 className="nav-item relative"
-                onMouseEnter={() => item.hasDropdown && setActiveMenu(item.name)}
-                onMouseLeave={() => setActiveMenu(null)}
+                 onMouseEnter={() => item.hasDropdown && openMenu(item.name)}
+                 onMouseLeave={() => item.hasDropdown && scheduleCloseMenu()}
               >
                 <Link
                   to={item.href}
@@ -75,12 +95,11 @@ const Header = () => {
 
           {/* Mega Menu rendered outside nav items */}
           {activeMenu && (
-            <div
-              onMouseEnter={() => setActiveMenu(activeMenu)}
-              onMouseLeave={() => setActiveMenu(null)}
-            >
-              <MegaMenu type={activeMenu} />
-            </div>
+            <MegaMenu
+              type={activeMenu}
+              onMenuEnter={cancelScheduledClose}
+              onMenuLeave={scheduleCloseMenu}
+            />
           )}
 
           {/* CTA Button */}

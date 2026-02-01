@@ -5,6 +5,8 @@ import heroRailway from '@/assets/hero-railway.jpg';
 
 interface MegaMenuProps {
   type: string;
+  onMenuEnter?: () => void;
+  onMenuLeave?: () => void;
 }
 
 const busCategories = [
@@ -30,10 +32,14 @@ const aboutItems = [
   { name: 'Annual Reports', href: '/about#reports', icon: FileText, description: 'Investor information' },
 ];
 
-const MegaMenu = ({ type }: MegaMenuProps) => {
+const MegaMenu = ({ type, onMenuEnter, onMenuLeave }: MegaMenuProps) => {
   if (type === 'Products') {
     return (
-      <div className="fixed left-0 right-0 top-[132px] z-50 opacity-100 visible transition-all duration-300 ease-out">
+      <div
+        className="fixed left-0 right-0 top-[132px] z-[60] opacity-100 visible transition-all duration-300 ease-out pointer-events-auto"
+        onMouseEnter={onMenuEnter}
+        onMouseLeave={onMenuLeave}
+      >
         <div className="bg-background border-b border-border shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-2 gap-8">
@@ -121,7 +127,11 @@ const MegaMenu = ({ type }: MegaMenuProps) => {
 
   if (type === 'About Us') {
     return (
-      <div className="fixed left-0 right-0 top-[132px] z-50 opacity-100 visible transition-all duration-300 ease-out">
+      <div
+        className="fixed left-0 right-0 top-[132px] z-[60] opacity-100 visible transition-all duration-300 ease-out pointer-events-auto"
+        onMouseEnter={onMenuEnter}
+        onMouseLeave={onMenuLeave}
+      >
         <div className="bg-background border-b border-border shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-4 gap-6">
