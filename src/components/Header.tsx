@@ -99,6 +99,7 @@ const Header = () => {
               type={activeMenu}
               onMenuEnter={cancelScheduledClose}
               onMenuLeave={scheduleCloseMenu}
+              onClose={() => setActiveMenu(null)}
             />
           )}
 
