@@ -30,6 +30,11 @@ const busCategories = [
     slug: 'interior-fixtures',
     description: 'Grab rails, luggage racks, and interior fittings',
   },
+  {
+    name: 'Additional Components',
+    slug: 'additional-components',
+    description: 'Bumpers, guard rails, mudguards, fenders, step assemblies, weather strips, and custom parts',
+  },
 ];
 
 const BusProducts = () => {
