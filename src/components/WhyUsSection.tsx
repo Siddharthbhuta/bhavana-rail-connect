@@ -35,16 +35,16 @@ const features = [
 
 const WhyUsSection = () => {
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-gray-50">
       <div className="container-custom">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Content */}
           <div>
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
+            <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6 text-gray-900">
               Trusted by Railways & Bus Manufacturers
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-gray-600 text-lg mb-8">
               With over 25 years of experience in railway and bus component manufacturing, 
               Bhavana Trading Co has established itself as a reliable partner for 
               Indian Railways, bus manufacturers, and private operators.
@@ -57,8 +57,8 @@ const WhyUsSection = () => {
                     <feature.icon className="w-6 h-6 text-accent" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-foreground mb-1">{feature.title}</h3>
-                    <p className="text-sm text-muted-foreground">{feature.description}</p>
+                    <h3 className="font-semibold text-gray-900 mb-1">{feature.title}</h3>
+                    <p className="text-sm text-gray-600">{feature.description}</p>
                   </div>
                 </div>
               ))}
@@ -68,15 +68,15 @@ const WhyUsSection = () => {
           {/* Right Content - Large Feature Cards */}
           <div className="space-y-6">
             {features.slice(4).map((feature) => (
-              <div key={feature.title} className="card-industrial flex gap-6 items-start">
-                <div className="w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <feature.icon className="w-8 h-8 text-primary" />
+              <div key={feature.title} className="bg-white rounded-xl border border-gray-200 p-6 flex gap-6 items-start transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                <div className="w-16 h-16 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                  <feature.icon className="w-8 h-8 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-display font-semibold text-lg text-foreground mb-2">
+                  <h3 className="font-display font-semibold text-lg text-gray-900 mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
+                  <p className="text-gray-600">{feature.description}</p>
                 </div>
               </div>
             ))}
@@ -85,17 +85,17 @@ const WhyUsSection = () => {
             <div className="flex items-center gap-8 pt-4">
               <div className="text-center">
                 <div className="text-3xl font-display font-bold text-accent">1000+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
+                <div className="text-sm text-gray-600">Projects Completed</div>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
                 <div className="text-3xl font-display font-bold text-accent">98%</div>
-                <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                <div className="text-sm text-gray-600">Client Satisfaction</div>
               </div>
-              <div className="w-px h-12 bg-border" />
+              <div className="w-px h-12 bg-gray-300" />
               <div className="text-center">
                 <div className="text-3xl font-display font-bold text-accent">24/7</div>
-                <div className="text-sm text-muted-foreground">Technical Support</div>
+                <div className="text-sm text-gray-600">Technical Support</div>
               </div>
             </div>
           </div>
