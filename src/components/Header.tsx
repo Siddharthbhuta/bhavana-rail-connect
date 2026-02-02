@@ -56,19 +56,19 @@ const Header = () => {
         </div>
       </div>
 
-      {/* Main Navigation */}
-      <nav className="bg-background/95 backdrop-blur-md border-b border-border/50">
+      {/* Main Navigation - White background */}
+      <nav className="bg-white border-b border-gray-200">
         <div className="container-custom flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
-              <Train className="w-7 h-7 text-accent-foreground" />
+              <Train className="w-7 h-7 text-white" />
             </div>
             <div>
-              <h1 className="font-display font-bold text-lg text-foreground leading-tight">
+              <h1 className="font-display font-bold text-lg text-gray-900 leading-tight">
                 Bhavana Trading Co
               </h1>
-              <p className="text-xs text-muted-foreground">Railway & Bus Components</p>
+              <p className="text-xs text-gray-500">Railway & Bus Components</p>
             </div>
           </Link>
 
@@ -83,7 +83,7 @@ const Header = () => {
               >
                 <Link
                   to={item.href}
-                  className="nav-link flex items-center gap-1"
+                  className="flex items-center gap-1 px-4 py-2 text-sm font-medium text-gray-700 hover:text-accent transition-colors"
                 >
                   {item.name}
                   {item.hasDropdown && <ChevronDown className="w-4 h-4" />}
@@ -112,7 +112,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2 text-gray-900"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -121,13 +121,13 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden bg-background border-t border-border">
+          <div className="lg:hidden bg-white border-t border-gray-200">
             <div className="container-custom py-4 space-y-2">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
                   to={item.href}
-                  className="block py-3 px-4 text-foreground hover:bg-secondary rounded-md transition-colors"
+                  className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {item.name}
