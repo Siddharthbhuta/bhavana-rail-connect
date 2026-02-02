@@ -34,15 +34,15 @@ const products = [
 
 const ProductsSection = () => {
   return (
-    <section className="section-padding bg-secondary/30">
+    <section className="section-padding bg-white">
       <div className="container-custom">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Products</span>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6 text-gray-900">
             Precision-Engineered Railway & Bus Components
           </h2>
-          <p className="text-muted-foreground text-lg">
+          <p className="text-gray-600 text-lg">
             From locomotive parts to bus chassis, we manufacture a comprehensive range 
             of components meeting RDSO specifications and international standards.
           </p>
@@ -53,32 +53,31 @@ const ProductsSection = () => {
           {products.map((product, index) => (
             <div
               key={product.name}
-              className="group card-industrial overflow-hidden p-0"
+              className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="relative h-56 overflow-hidden">
+              <div className="relative h-56 overflow-hidden bg-gray-100">
                 <img
                   src={product.image}
                   alt={product.name}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-accent/90 text-accent-foreground text-xs font-medium rounded-full">
+                <span className="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
                   {product.category}
                 </span>
               </div>
-              <div className="p-6">
-                <h3 className="font-display font-semibold text-lg mb-2 group-hover:text-accent transition-colors">
+              <div className="p-6 bg-white">
+                <h3 className="font-display font-semibold text-lg mb-2 text-accent">
                   {product.name}
                 </h3>
-                <p className="text-muted-foreground text-sm mb-4 line-clamp-2">
+                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
                   {product.description}
                 </p>
                 <Link
                   to="/products"
-                  className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-accent transition-colors"
+                  className="inline-flex items-center justify-center gap-2 w-full py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
                 >
-                  Learn More
+                  View Products
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -88,7 +87,7 @@ const ProductsSection = () => {
 
         {/* CTA */}
         <div className="text-center mt-12">
-          <Link to="/products" className="btn-primary">
+          <Link to="/products" className="btn-accent">
             View All Products
             <ArrowRight className="w-4 h-4" />
           </Link>
