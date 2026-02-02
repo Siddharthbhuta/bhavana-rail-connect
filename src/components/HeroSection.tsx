@@ -10,16 +10,16 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[hsl(0,0%,8%)]">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Railway components manufacturing"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-15"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-background/98 to-background/80" />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-background/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(0,0%,8%)] via-[hsl(0,0%,8%)]/95 to-[hsl(0,0%,8%)]/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,8%)] via-transparent to-[hsl(0,0%,8%)]/60" />
       </div>
 
       {/* Content */}
@@ -27,20 +27,20 @@ const HeroSection = () => {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <div className="space-y-8">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-accent/30 bg-accent/10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5">
               <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              <span className="text-sm text-accent font-medium">India's Trusted Railway & Bus Partner</span>
+              <span className="text-sm text-white font-medium">India's Trusted Railway & Bus Partner</span>
             </div>
 
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              <span className="text-gradient-accent">Premium Quality</span>
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-white">
+              <span className="text-accent">Premium Quality</span>
               <br />
               Railway & Bus
               <br />
               Components
             </h1>
 
-            <p className="text-lg text-muted-foreground max-w-xl">
+            <p className="text-lg text-gray-400 max-w-xl">
               Engineering excellence for Indian Railways, bus manufacturers, and private operators. 
               From bogies to chassis, we deliver precision-manufactured components 
               that meet the highest safety standards.
@@ -51,7 +51,7 @@ const HeroSection = () => {
                 Explore Products
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="btn-outline">
+              <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-white/30 text-white transition-all duration-300 hover:border-accent hover:text-accent">
                 Get a Quote
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -61,7 +61,7 @@ const HeroSection = () => {
               {features.map((feature) => (
                 <div key={feature} className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-accent" />
-                  <span className="text-sm text-muted-foreground">{feature}</span>
+                  <span className="text-sm text-gray-400">{feature}</span>
                 </div>
               ))}
             </div>
@@ -70,21 +70,21 @@ const HeroSection = () => {
           {/* Right Content - Stats */}
           <div className="hidden lg:block">
             <div className="grid grid-cols-2 gap-6">
-              <div className="card-industrial text-center">
-                <div className="text-4xl font-display font-bold text-gradient-accent mb-2">25+</div>
-                <p className="text-muted-foreground">Years of Excellence</p>
+              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+                <div className="text-4xl font-display font-bold text-accent mb-2">25+</div>
+                <p className="text-gray-400">Years of Excellence</p>
               </div>
-              <div className="card-industrial text-center">
-                <div className="text-4xl font-display font-bold text-gradient-accent mb-2">500+</div>
-                <p className="text-muted-foreground">Product Range</p>
+              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+                <div className="text-4xl font-display font-bold text-accent mb-2">500+</div>
+                <p className="text-gray-400">Product Range</p>
               </div>
-              <div className="card-industrial text-center">
-                <div className="text-4xl font-display font-bold text-gradient-accent mb-2">50+</div>
-                <p className="text-muted-foreground">Railway Clients</p>
+              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+                <div className="text-4xl font-display font-bold text-accent mb-2">50+</div>
+                <p className="text-gray-400">Railway Clients</p>
               </div>
-              <div className="card-industrial text-center">
-                <div className="text-4xl font-display font-bold text-gradient-accent mb-2">99%</div>
-                <p className="text-muted-foreground">On-Time Delivery</p>
+              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+                <div className="text-4xl font-display font-bold text-accent mb-2">99%</div>
+                <p className="text-gray-400">On-Time Delivery</p>
               </div>
             </div>
           </div>

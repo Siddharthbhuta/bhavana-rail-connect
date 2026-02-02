@@ -43,35 +43,35 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
         onMouseEnter={onMenuEnter}
         onMouseLeave={onMenuLeave}
       >
-        <div className="bg-background border-b border-border shadow-2xl">
+        <div className="bg-white border-b border-gray-200 shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-2 gap-8">
               {/* Bus Components Box */}
-              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/bus" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
                     src={productBus}
                     alt="Bus Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-3 left-4 flex items-center gap-2">
                     <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                      <Bus className="w-5 h-5 text-accent-foreground" />
+                      <Bus className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="font-display font-bold text-lg text-foreground">
+                    <h3 className="font-display font-bold text-lg text-white">
                       Bus Components
                     </h3>
                   </div>
                 </Link>
-                <div className="p-4 bg-secondary/30">
+                <div className="p-4 bg-gray-50">
                   <ul className="space-y-2">
                     {busCategories.map((item) => (
                       <li key={item}>
                         <Link
                           to={`/products/bus/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           onClick={onClose}
-                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
+                          className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -83,31 +83,31 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
               </div>
 
               {/* Train Components Box */}
-              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/train" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
                     src={heroRailway}
                     alt="Train Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/90 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
                   <div className="absolute bottom-3 left-4 flex items-center gap-2">
                     <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                      <Train className="w-5 h-5 text-accent-foreground" />
+                      <Train className="w-5 h-5 text-white" />
                     </div>
-                    <h3 className="font-display font-bold text-lg text-foreground">
+                    <h3 className="font-display font-bold text-lg text-white">
                       Train Components
                     </h3>
                   </div>
                 </Link>
-                <div className="p-4 bg-secondary/30">
+                <div className="p-4 bg-gray-50">
                   <ul className="space-y-2">
                     {trainCategories.map((item) => (
                       <li key={item}>
                         <Link
                           to={`/products/train/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           onClick={onClose}
-                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
+                          className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -119,8 +119,8 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
               </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-border text-center">
-              <Link to="/products" onClick={onClose} className="btn-primary text-sm py-2 px-6 inline-block">
+            <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+              <Link to="/products" onClick={onClose} className="btn-accent text-sm py-2 px-6 inline-block">
                 View All Products
               </Link>
             </div>
@@ -137,7 +137,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
         onMouseEnter={onMenuEnter}
         onMouseLeave={onMenuLeave}
       >
-        <div className="bg-background border-b border-border shadow-2xl">
+        <div className="bg-white border-b border-gray-200 shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-4 gap-6">
               {aboutItems.map((item) => (
@@ -145,15 +145,15 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                   key={item.name}
                   to={item.href}
                   onClick={onClose}
-                  className="group card-industrial hover:border-accent/50 p-4"
+                  className="group bg-white border border-gray-200 rounded-xl p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
-                    <item.icon className="w-5 h-5 text-primary group-hover:text-accent transition-colors" />
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
+                    <item.icon className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="font-display font-semibold text-sm text-foreground mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="font-display font-semibold text-sm text-gray-900 mb-1 group-hover:text-accent transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-muted-foreground">
+                  <p className="text-xs text-gray-500">
                     {item.description}
                   </p>
                 </Link>
