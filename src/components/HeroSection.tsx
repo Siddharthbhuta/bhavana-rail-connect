@@ -16,10 +16,10 @@ const HeroSection = () => {
         <img
           src={heroImage}
           alt="Railway components manufacturing"
-          className="w-full h-full object-cover opacity-20"
+          className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/75 to-primary/60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
       </div>
 
       {/* Content */}
