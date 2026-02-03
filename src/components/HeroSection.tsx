@@ -10,16 +10,16 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-[hsl(0,0%,8%)]">
+    <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-primary">
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <img
           src={heroImage}
           alt="Railway components manufacturing"
-          className="w-full h-full object-cover opacity-15"
+          className="w-full h-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[hsl(0,0%,8%)] via-[hsl(0,0%,8%)]/95 to-[hsl(0,0%,8%)]/70" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[hsl(0,0%,8%)] via-transparent to-[hsl(0,0%,8%)]/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/95 to-primary/70" />
+        <div className="absolute inset-0 bg-gradient-to-t from-primary via-transparent to-primary/60" />
       </div>
 
       {/* Content */}
@@ -40,7 +40,7 @@ const HeroSection = () => {
               Components
             </h1>
 
-            <p className="text-lg text-gray-400 max-w-xl">
+            <p className="text-lg text-white/70 max-w-xl">
               Engineering excellence for Indian Railways, bus manufacturers, and private operators. 
               From bogies to chassis, we deliver precision-manufactured components 
               that meet the highest safety standards.
@@ -61,7 +61,7 @@ const HeroSection = () => {
               {features.map((feature) => (
                 <div key={feature} className="flex items-center gap-2">
                   <CheckCircle2 className="w-5 h-5 text-accent" />
-                  <span className="text-sm text-gray-400">{feature}</span>
+                  <span className="text-sm text-white/70">{feature}</span>
                 </div>
               ))}
             </div>
@@ -70,21 +70,21 @@ const HeroSection = () => {
           {/* Right Content - Stats */}
           <div className="hidden lg:block">
             <div className="grid grid-cols-2 gap-6">
-              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
                 <div className="text-4xl font-display font-bold text-accent mb-2">25+</div>
-                <p className="text-gray-400">Years of Excellence</p>
+                <p className="text-white/80">Years of Excellence</p>
               </div>
-              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
                 <div className="text-4xl font-display font-bold text-accent mb-2">500+</div>
-                <p className="text-gray-400">Product Range</p>
+                <p className="text-white/80">Product Range</p>
               </div>
-              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
                 <div className="text-4xl font-display font-bold text-accent mb-2">50+</div>
-                <p className="text-gray-400">Railway Clients</p>
+                <p className="text-white/80">Railway Clients</p>
               </div>
-              <div className="bg-[hsl(0,0%,12%)] border border-white/10 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
+              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
                 <div className="text-4xl font-display font-bold text-accent mb-2">99%</div>
-                <p className="text-gray-400">On-Time Delivery</p>
+                <p className="text-white/80">On-Time Delivery</p>
               </div>
             </div>
           </div>
