@@ -98,6 +98,52 @@ const BusProducts = () => {
         </div>
       </section>
 
+      {/* Compatible Bus Models Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container-custom">
+          <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-center mb-4">
+            Compatible Bus Models
+          </h2>
+          <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">
+            Our components are compatible with major bus manufacturers and models
+          </p>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
+              <h3 className="font-display font-bold text-lg text-primary mb-2">
+                Ashok Leyland
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                Comet, Dost, Champ, Commander
+              </p>
+            </div>
+            <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
+              <h3 className="font-display font-bold text-lg text-primary mb-2">
+                Tata Motors
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                ACE, Novus, Sumo, Winger
+              </p>
+            </div>
+            <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
+              <h3 className="font-display font-bold text-lg text-primary mb-2">
+                Volvo Eicher
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                B7R, B9, C95
+              </p>
+            </div>
+            <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
+              <h3 className="font-display font-bold text-lg text-primary mb-2">
+                Other Brands
+              </h3>
+              <p className="text-muted-foreground text-sm">
+                Mahindra, Isuzu, MAN, Scania
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
