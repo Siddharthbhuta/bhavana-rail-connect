@@ -29,10 +29,10 @@ const trainCategories = [
 ];
 
 const aboutItems = [
-  { name: 'Our Story', href: '/about', icon: Building2, description: 'Learn about our journey' },
+  { name: 'Our Story', href: '/about#story', icon: Building2, description: 'Learn about our journey' },
   { name: 'Leadership Team', href: '/about#team', icon: Users, description: 'Meet our experts' },
   { name: 'Certifications', href: '/about#certifications', icon: Award, description: 'Quality standards' },
-  { name: 'Annual Reports', href: '/about#reports', icon: FileText, description: 'Investor information' },
+  { name: 'Achievements', href: '/about#achievements', icon: FileText, description: 'Our milestones' },
 ];
 
 const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) => {
