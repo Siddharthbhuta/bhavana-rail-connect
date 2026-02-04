@@ -1,35 +1,24 @@
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Bus, Train } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import productBogie from '@/assets/product-bogie.jpg';
-import productCoupler from '@/assets/product-coupler.jpg';
-import productBrake from '@/assets/product-brake.jpg';
 import productBus from '@/assets/product-bus.jpg';
+import heroRailway from '@/assets/hero-railway.jpg';
 
-const products = [
-  {
-    name: 'Railway Bogies',
-    description: 'Complete wheel sets, axle boxes, and bogie frame assemblies engineered for heavy-duty railway operations.',
-    image: productBogie,
-    category: 'Railway',
-  },
-  {
-    name: 'Couplers & Draft Gear',
-    description: 'AAR-compliant coupling systems designed for maximum safety and durability.',
-    image: productCoupler,
-    category: 'Railway',
-  },
-  {
-    name: 'Bus Components',
-    description: 'Heavy-duty chassis parts, axle assemblies, and body fittings for commercial buses.',
-    image: productBus,
-    category: 'Bus',
-  },
-  {
-    name: 'Brake Systems',
-    description: 'Precision braking components including shoes, cylinders, and control valves.',
-    image: productBrake,
-    category: 'Safety Systems',
-  },
+const busCategories = [
+  'Body Panels and Doors',
+  'Doors and Windows',
+  'Roof Components',
+  'Seating Systems',
+  'Interior Fixtures',
+  'Additional Components',
+];
+
+const trainCategories = [
+  'Bogie Assemblies',
+  'Coupling Systems',
+  'Brake Systems',
+  'Safety Equipment',
+  'Specialized Parts and Assemblies',
+  'Miscellaneous Components',
 ];
 
 const ProductsSection = () => {
@@ -48,49 +37,87 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Products Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {products.map((product, index) => (
-            <div
-              key={product.name}
-              className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
-            >
-              <div className="relative h-56 overflow-hidden bg-gray-100">
+        {/* Products Grid - Two Column Layout */}
+        <div className="max-w-4xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Bus Components Box */}
+            <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <Link to="/products/bus" className="block relative h-40 overflow-hidden">
                 <img
-                  src={product.image}
-                  alt={product.name}
+                  src={productBus}
+                  alt="Bus Components"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <span className="absolute top-4 left-4 px-3 py-1 bg-accent text-white text-xs font-medium rounded-full">
-                  {product.category}
-                </span>
-              </div>
-              <div className="p-6 bg-white">
-                <h3 className="font-display font-semibold text-lg mb-2 text-accent">
-                  {product.name}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-2">
-                  {product.description}
-                </p>
-                <Link
-                  to="/products"
-                  className="inline-flex items-center justify-center gap-2 w-full py-3 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors"
-                >
-                  View Products
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                    <Bus className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-lg text-white">
+                    Bus Components
+                  </h3>
+                </div>
+              </Link>
+              <div className="p-4 bg-gray-50">
+                <ul className="space-y-2">
+                  {busCategories.map((item) => (
+                    <li key={item}>
+                      <Link
+                        to={`/products/bus/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
-          ))}
-        </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link to="/products" className="btn-accent">
-            View All Products
-            <ArrowRight className="w-4 h-4" />
-          </Link>
+            {/* Train Components Box */}
+            <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <Link to="/products/train" className="block relative h-40 overflow-hidden">
+                <img
+                  src={heroRailway}
+                  alt="Train Components"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
+                <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                    <Train className="w-5 h-5 text-white" />
+                  </div>
+                  <h3 className="font-display font-bold text-lg text-white">
+                    Train Components
+                  </h3>
+                </div>
+              </Link>
+              <div className="p-4 bg-gray-50">
+                <ul className="space-y-2">
+                  {trainCategories.map((item) => (
+                    <li key={item}>
+                      <Link
+                        to={`/products/train/${item.toLowerCase().replace(/\s+/g, '-')}`}
+                        className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
+                        {item}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <Link to="/products" className="btn-accent">
+              View All Products
+              <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>
