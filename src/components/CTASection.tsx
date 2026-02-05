@@ -22,7 +22,7 @@ const CTASection = () => {
                   Request Quote
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+911234567890" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-gray-300 text-gray-900 transition-all duration-300 hover:border-accent hover:text-accent">
+                <a href="tel:+918767333312" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-gray-300 text-gray-900 transition-all duration-300 hover:border-accent hover:text-accent">
                   <Phone className="w-4 h-4" />
                   Call Now
                 </a>
@@ -36,9 +36,10 @@ const CTASection = () => {
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Phone</h3>
-                  <p className="text-gray-600">+91 123 456 7890</p>
-                  <p className="text-gray-600">+91 098 765 4321</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Rakesh Mehta</h3>
+                  <p className="text-gray-600">8767333312 / 9821295540</p>
+                  <h3 className="font-semibold text-gray-900 mb-1 mt-2">Vipul Mehta</h3>
+                  <p className="text-gray-600">9821502275 / 8080502275</p>
                 </div>
               </div>
 
@@ -48,8 +49,8 @@ const CTASection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">info@bhavanatrading.com</p>
-                  <p className="text-gray-600">sales@bhavanatrading.com</p>
+                  <p className="text-gray-600">rksales27@gmail.com</p>
+                  <p className="text-gray-500 text-sm">Response within 24 hours</p>
                 </div>
               </div>
 
@@ -60,8 +61,10 @@ const CTASection = () => {
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
                   <p className="text-gray-600">
-                    Industrial Area, Sector 5,<br />
-                    Mumbai, Maharashtra 400001
+                    R K Sales Corporation,<br />
+                    DGS Sheetal Regalia, Office No - 06 B,<br />
+                    1st Floor, Nensey Colony,<br />
+                    Borivali-East, Mumbai - 400066, India
                   </p>
                 </div>
               </div>
