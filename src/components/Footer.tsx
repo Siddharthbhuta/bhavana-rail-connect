@@ -45,7 +45,7 @@ const Footer = () => {
             </Link>
             <p className="text-muted-foreground mb-6 max-w-sm">
               India's trusted manufacturer of premium railway and bus components. 
-              Delivering quality and reliability since 1995.
+              Delivering quality and reliability since 1998.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-lg bg-secondary flex items-center justify-center hover:bg-accent transition-colors group">
@@ -97,15 +97,15 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">+91 123 456 7890</span>
+                <span className="text-muted-foreground text-sm">8767333312 / 9821295540</span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">info@bhavanatrading.com</span>
+                <span className="text-muted-foreground text-sm">rksales27@gmail.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-muted-foreground text-sm">Industrial Area, Sector 5,<br />Mumbai, Maharashtra</span>
+                <span className="text-muted-foreground text-sm">DGS Sheetal Regalia,<br />Borivali-East, Mumbai - 400066</span>
               </li>
             </ul>
           </div>
