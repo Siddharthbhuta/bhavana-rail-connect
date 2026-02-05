@@ -1,7 +1,7 @@
 import { ArrowRight, Bus, Train } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import productBus from '@/assets/product-bus.jpg';
-import heroRailway from '@/assets/hero-railway.jpg';
+import busIllustration from '@/assets/bus-illustration.png';
+import trainIllustration from '@/assets/train-illustration.png';
 
 const busCategories = [
   'Body Panels and Doors',
@@ -42,19 +42,16 @@ const ProductsSection = () => {
           <div className="grid md:grid-cols-2 gap-8">
             {/* Bus Components Box */}
             <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-              <Link to="/products/bus" className="block relative h-40 overflow-hidden">
+              <div className="border-t-4 border-t-accent" />
+              <Link to="/products/bus" className="block p-6 bg-white">
                 <img
-                  src={productBus}
+                  src={busIllustration}
                   alt="Bus Components"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                    <Bus className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-display font-bold text-lg text-white">
-                    Bus Components
+                <div className="mt-4 flex items-center gap-2">
+                  <h3 className="font-display font-bold text-xl text-gray-900">
+                    Bus Body Components
                   </h3>
                 </div>
               </Link>
@@ -77,19 +74,16 @@ const ProductsSection = () => {
 
             {/* Train Components Box */}
             <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-              <Link to="/products/train" className="block relative h-40 overflow-hidden">
+              <div className="border-t-4 border-t-accent" />
+              <Link to="/products/train" className="block p-6 bg-white">
                 <img
-                  src={heroRailway}
+                  src={trainIllustration}
                   alt="Train Components"
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
-                <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                  <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                    <Train className="w-5 h-5 text-white" />
-                  </div>
-                  <h3 className="font-display font-bold text-lg text-white">
-                    Train Components
+                <div className="mt-4 flex items-center gap-2">
+                  <h3 className="font-display font-bold text-xl text-gray-900">
+                    Railway Components
                   </h3>
                 </div>
               </Link>
