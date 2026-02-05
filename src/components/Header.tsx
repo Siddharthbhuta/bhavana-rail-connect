@@ -39,18 +39,12 @@ const Header = () => {
       {/* Top Bar - Dark Teal Background */}
       <div className="bg-primary py-2">
         <div className="container-custom flex items-center justify-between text-sm">
-          <div className="flex items-center gap-6">
-            <a href="tel:+911234567890" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
-              <Phone className="w-4 h-4" />
-              <span className="hidden sm:inline">+91 123 456 7890</span>
-            </a>
-            <a href="mailto:info@bhavanatrading.com" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
-              <Mail className="w-4 h-4" />
-              <span className="hidden sm:inline">info@bhavanatrading.com</span>
-            </a>
-          </div>
+          <a href="mailto:rksales27@gmail.com" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
+            <Mail className="w-4 h-4" />
+            <span className="hidden sm:inline">rksales27@gmail.com</span>
+          </a>
           <span className="text-primary-foreground font-medium hidden md:block">
-            Premium Railway & Bus Components Since 1995
+            Premium Railway & Bus Components Since 1998
           </span>
         </div>
       </div>
