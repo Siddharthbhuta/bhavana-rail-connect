@@ -67,27 +67,6 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Right Content - Stats */}
-          <div className="hidden lg:block">
-            <div className="grid grid-cols-2 gap-6">
-              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
-                <div className="text-4xl font-display font-bold text-accent mb-2">25+</div>
-                <p className="text-white/80">Years of Excellence</p>
-              </div>
-              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
-                <div className="text-4xl font-display font-bold text-accent mb-2">500+</div>
-                <p className="text-white/80">Product Range</p>
-              </div>
-              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
-                <div className="text-4xl font-display font-bold text-accent mb-2">50+</div>
-                <p className="text-white/80">Railway Clients</p>
-              </div>
-              <div className="bg-primary-foreground/10 border border-white/20 rounded-xl p-6 text-center transition-all duration-300 hover:border-accent/50 hover:-translate-y-1">
-                <div className="text-4xl font-display font-bold text-accent mb-2">99%</div>
-                <p className="text-white/80">On-Time Delivery</p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { Train, Bus, Users, Building2, Award, FileText } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Train, Bus, Users, Building2, Award } from 'lucide-react';
 import productBus from '@/assets/product-bus.jpg';
 import heroRailway from '@/assets/hero-railway.jpg';
 
@@ -29,10 +29,9 @@ const trainCategories = [
 ];
 
 const aboutItems = [
-  { name: 'Our Story', href: '/about#story', icon: Building2, description: 'Learn about our journey' },
-  { name: 'Leadership Team', href: '/about#team', icon: Users, description: 'Meet our experts' },
-  { name: 'Certifications', href: '/about#certifications', icon: Award, description: 'Quality standards' },
-  { name: 'Achievements', href: '/about#achievements', icon: FileText, description: 'Our milestones' },
+  { name: 'Our Story', href: '/about', hash: '#story', icon: Building2, description: 'Learn about our journey' },
+  { name: 'Leadership Team', href: '/about', hash: '#team', icon: Users, description: 'Meet our experts' },
+  { name: 'Certifications', href: '/about', hash: '#certifications', icon: Award, description: 'Quality standards' },
 ];
 
 const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) => {
@@ -131,32 +130,37 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
   }
 
   if (type === 'About Us') {
+    const handleAboutClick = (item: typeof aboutItems[0]) => {
+      onClose?.();
+      // Navigate to about page and then scroll to the section
+      window.location.href = item.href + item.hash;
+    };
+
     return (
       <div
         className="fixed left-0 right-0 top-[132px] z-[60] opacity-100 visible transition-all duration-300 ease-out pointer-events-auto"
         onMouseEnter={onMenuEnter}
         onMouseLeave={onMenuLeave}
       >
-        <div className="bg-white border-b border-gray-200 shadow-2xl">
+        <div className="bg-card border-b border-border shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-4 gap-6">
+            <div className="grid grid-cols-3 gap-6">
               {aboutItems.map((item) => (
-                <Link
+                <button
                   key={item.name}
-                  to={item.href}
-                  onClick={onClose}
-                  className="group bg-white border border-gray-200 rounded-xl p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1"
+                  onClick={() => handleAboutClick(item)}
+                  className="group bg-card border border-border rounded-xl p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
                     <item.icon className="w-5 h-5 text-accent" />
                   </div>
-                  <h3 className="font-display font-semibold text-sm text-gray-900 mb-1 group-hover:text-accent transition-colors">
+                  <h3 className="font-display font-semibold text-sm text-foreground mb-1 group-hover:text-accent transition-colors">
                     {item.name}
                   </h3>
-                  <p className="text-xs text-gray-500">
+                  <p className="text-xs text-muted-foreground">
                     {item.description}
                   </p>
-                </Link>
+                </button>
               ))}
             </div>
           </div>
