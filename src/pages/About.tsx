@@ -11,8 +11,6 @@ import {
   Handshake, 
   Leaf,
   Award,
-  Trophy,
-  // Placeholder icons for team members
   User
 } from 'lucide-react';
 
@@ -50,25 +48,19 @@ const About = () => {
     },
   ];
 
-  // Placeholder for leadership team - easy to update later
+  // Leadership team - Rakesh Mehta and Vipul Mehta
   const leadershipTeam = [
     {
-      name: 'Team Member Name',
-      position: 'Position Title',
-      image: null, // Add image path here later
-      bio: 'Brief description about this team member.',
+      name: 'Rakesh Mehta',
+      position: 'Co-Founder & Director',
+      image: null, // Add image: import rakeshImage from '@/assets/rakesh-mehta.jpg' and set here
+      bio: 'With over 25 years of experience in the railway and bus components industry, Rakesh leads business development and client relations.',
     },
     {
-      name: 'Team Member Name',
-      position: 'Position Title',
-      image: null,
-      bio: 'Brief description about this team member.',
-    },
-    {
-      name: 'Team Member Name',
-      position: 'Position Title',
-      image: null,
-      bio: 'Brief description about this team member.',
+      name: 'Vipul Mehta',
+      position: 'Co-Founder & Director',
+      image: null, // Add image: import vipulImage from '@/assets/vipul-mehta.jpg' and set here
+      bio: 'Vipul oversees manufacturing operations and quality assurance, ensuring every product meets the highest standards.',
     },
   ];
 
@@ -91,24 +83,6 @@ const About = () => {
     },
   ];
 
-  // Placeholder for achievements - easy to update later
-  const achievements = [
-    {
-      year: '2023',
-      title: 'Achievement Title',
-      description: 'Description of the achievement.',
-    },
-    {
-      year: '2022',
-      title: 'Achievement Title',
-      description: 'Description of the achievement.',
-    },
-    {
-      year: '2020',
-      title: 'Achievement Title',
-      description: 'Description of the achievement.',
-    },
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -240,7 +214,7 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
               {leadershipTeam.map((member, index) => (
                 <div 
                   key={index}
@@ -320,48 +294,6 @@ const About = () => {
           </div>
         </section>
 
-        {/* Achievements Section */}
-        <section id="achievements" className="py-16 bg-muted/30">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                Our Milestones
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
-                Achievements
-              </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Key milestones and recognitions that mark our journey of excellence.
-              </p>
-            </div>
-            
-            <div className="max-w-3xl mx-auto">
-              {achievements.map((achievement, index) => (
-                <div 
-                  key={index}
-                  className="flex gap-6 mb-8 last:mb-0"
-                >
-                  <div className="flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full bg-accent flex items-center justify-center">
-                      <Trophy className="w-8 h-8 text-white" />
-                    </div>
-                  </div>
-                  <div className="flex-grow bg-card rounded-xl shadow-sm p-6">
-                    <span className="text-accent font-bold text-sm">
-                      {achievement.year}
-                    </span>
-                    <h3 className="font-display text-lg font-bold text-foreground mt-1 mb-2">
-                      {achievement.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm">
-                      {achievement.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>
