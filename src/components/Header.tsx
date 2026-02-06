@@ -97,8 +97,8 @@ const Header = () => {
 
           {/* CTA Button - Orange-Red Accent */}
           <div className="hidden lg:block">
-            <Link to="/about" className="btn-accent">
-              About Us
+            <Link to="/contact" className="btn-accent">
+              Get Quote
               <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
             </Link>
           </div>
@@ -126,8 +126,8 @@ const Header = () => {
                   {item.name}
                 </Link>
               ))}
-              <Link to="/about" className="btn-accent w-full mt-4">
-                About Us
+              <Link to="/contact" className="btn-accent w-full mt-4">
+                Get Quote
               </Link>
             </div>
           </div>

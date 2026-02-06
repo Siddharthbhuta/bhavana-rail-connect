@@ -51,8 +51,8 @@ const HeroSection = () => {
                 Explore Products
                 <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-white/30 text-white transition-all duration-300 hover:border-accent hover:text-accent">
-                Get a Quote
+              <Link to="/about" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-white/30 text-white transition-all duration-300 hover:border-accent hover:text-accent">
+                About Us
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
