@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Bus, ArrowRight } from 'lucide-react';
+import { Bus } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import productBus from '@/assets/product-bus.jpg';
@@ -88,10 +88,6 @@ const BusProducts = () => {
                 <p className="text-muted-foreground text-sm mb-4">
                   {category.description}
                 </p>
-                <div className="flex items-center gap-2 text-accent text-sm font-medium">
-                  View Products
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
               </Link>
             ))}
           </div>

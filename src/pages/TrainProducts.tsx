@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Train, ArrowRight, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones } from 'lucide-react';
+import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import heroRailway from '@/assets/hero-railway.jpg';
@@ -151,10 +151,6 @@ const TrainProducts = () => {
                 <p className="text-muted-foreground text-sm mb-4">
                   {category.description}
                 </p>
-                <div className="flex items-center gap-2 text-accent text-sm font-medium">
-                  View Products
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </div>
               </Link>
             ))}
           </div>
