@@ -45,7 +45,7 @@ const ProductsSection = () => {
               <div className="border-t-4 border-t-accent" />
               <Link to="/products/bus" className="block p-6 bg-white">
                 <img
-                  src={busIllustration}
+                  src={busProducts}
                   alt="Bus Components"
                   className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
@@ -77,7 +77,7 @@ const ProductsSection = () => {
               <div className="border-t-4 border-t-accent" />
               <Link to="/products/train" className="block p-6 bg-white">
                 <img
-                  src={trainIllustration}
+                  src={trainProducts}
                   alt="Train Components"
                   className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
                 />

@@ -33,7 +33,7 @@ const Products = () => {
             >
               <div className="relative h-64">
                 <img
-                  src={productBus}
+                  src={busProducts}
                   alt="Bus Components"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
@@ -65,7 +65,7 @@ const Products = () => {
             >
               <div className="relative h-64">
                 <img
-                  src={heroRailway}
+                  src={trainProducts}
                   alt="Train Components"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
