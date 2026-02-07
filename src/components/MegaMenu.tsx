@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Train, Bus, Users, Building2, Award } from 'lucide-react';
-import productBus from '@/assets/product-bus.jpg';
-import heroRailway from '@/assets/hero-railway.jpg';
+import busProducts from '@/assets/bus-products.jpg';
+import trainProducts from '@/assets/train-products.png';
 
 interface MegaMenuProps {
   type: string;
@@ -49,7 +49,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
               <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/bus" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
-                    src={productBus}
+                    src={busProducts}
                     alt="Bus Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
@@ -85,7 +85,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
               <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/train" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
-                    src={heroRailway}
+                    src={trainProducts}
                     alt="Train Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
