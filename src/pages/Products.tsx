@@ -2,8 +2,8 @@ import { Link } from 'react-router-dom';
 import { Bus, Train, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import productBus from '@/assets/product-bus.jpg';
-import heroRailway from '@/assets/hero-railway.jpg';
+import busProducts from '@/assets/bus-products.jpg';
+import trainProducts from '@/assets/train-products.png';
 
 const Products = () => {
   return (

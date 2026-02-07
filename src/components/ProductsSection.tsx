@@ -1,7 +1,7 @@
 import { ArrowRight, Bus, Train } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import busIllustration from '@/assets/bus-illustration.png';
-import trainIllustration from '@/assets/train-illustration.png';
+import busProducts from '@/assets/bus-products.jpg';
+import trainProducts from '@/assets/train-products.png';
 
 const busCategories = [
   'Body Panels and Doors',

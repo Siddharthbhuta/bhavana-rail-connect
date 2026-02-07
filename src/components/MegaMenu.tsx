@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { Train, Bus, Users, Building2, Award } from 'lucide-react';
-import productBus from '@/assets/product-bus.jpg';
-import heroRailway from '@/assets/hero-railway.jpg';
+import busProducts from '@/assets/bus-products.jpg';
+import trainProducts from '@/assets/train-products.png';
 
 interface MegaMenuProps {
   type: string;
