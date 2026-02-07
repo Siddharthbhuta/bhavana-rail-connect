@@ -1,8 +1,10 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CertificateCard from '@/components/CertificateCard';
+import InfoCertificateCard from '@/components/InfoCertificateCard';
+import StaticBadgesSection from '@/components/StaticBadgesSection';
 import { 
-  Target, 
+  Target,
   Eye, 
   Diamond, 
   Lightbulb, 
@@ -84,6 +86,30 @@ const About = () => {
       name: 'CIRT Test Report - J3215',
       description: 'First Aid Box - Flammability Test Certification',
       image: cirtJ3215,
+    },
+  ];
+
+  // Info certificates (expandable cards)
+  const infoCertificates = [
+    {
+      name: 'BIS License Certificate',
+      icon: 'shield' as const,
+      items: [
+        { label: 'Issued By', value: 'Bureau of Indian Standards (BIS)' },
+        { label: 'License Number', value: 'As per BIS database' },
+        { label: 'Scope', value: 'Authorized manufacturer of automotive and railway components under BIS standards.' },
+        { label: 'Benefits', value: 'Compliance with Indian national standards, government acceptance, and quality assurance for domestic and export markets.' },
+      ],
+    },
+    {
+      name: 'RoHS Compliance Certificate',
+      icon: 'leaf' as const,
+      items: [
+        { label: 'Regulation', value: 'Restriction of Hazardous Substances Directive' },
+        { label: 'Compliance Level', value: 'Full Compliance with RoHS 2.0' },
+        { label: 'Scope', value: 'All products manufactured without restricted hazardous substances.' },
+        { label: 'Benefits', value: 'Environmentally responsible manufacturing, international market acceptability, and reduced health risks.' },
+      ],
     },
   ];
 
@@ -268,7 +294,8 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Image Certificates */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
               {certificates.map((cert, index) => (
                 <CertificateCard
                   key={index}
@@ -277,6 +304,23 @@ const About = () => {
                   image={cert.image}
                 />
               ))}
+            </div>
+
+            {/* Info Certificates (Expandable) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-12">
+              {infoCertificates.map((cert, index) => (
+                <InfoCertificateCard
+                  key={index}
+                  name={cert.name}
+                  icon={cert.icon}
+                  items={cert.items}
+                />
+              ))}
+            </div>
+
+            {/* Static Badges */}
+            <div className="max-w-5xl mx-auto">
+              <StaticBadgesSection />
             </div>
           </div>
         </section>
