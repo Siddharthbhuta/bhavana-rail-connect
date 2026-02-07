@@ -89,7 +89,7 @@ const TrainProducts = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-16 relative">
+      <section className="pt-28 md:pt-40 pb-12 md:pb-16 relative">
         <div className="absolute inset-0">
           <img
             src={heroRailway}
@@ -116,7 +116,7 @@ const TrainProducts = () => {
       </section>
 
       {/* Our Railway Components Section */}
-      <section className="py-16 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom max-w-4xl">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-center mb-8">
             Our Railway Components
@@ -133,12 +133,12 @@ const TrainProducts = () => {
       </section>
 
       {/* Categories Grid */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container-custom">
           <h2 className="font-display font-bold text-2xl text-foreground mb-8">
             Browse Categories
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {trainCategories.map((category) => (
               <Link
                 key={category.slug}
@@ -158,12 +158,12 @@ const TrainProducts = () => {
       </section>
 
       {/* Industry Standards & Compliance Section */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-12 md:py-16 bg-muted/30">
         <div className="container-custom">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-center mb-12">
             Industry Standards & Compliance
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {complianceItems.map((item) => (
               <div
                 key={item.title}
@@ -185,12 +185,12 @@ const TrainProducts = () => {
       </section>
 
       {/* Technical Advantages Section */}
-      <section className="py-16 bg-background">
+      <section className="py-12 md:py-16 bg-background">
         <div className="container-custom">
           <h2 className="font-display font-bold text-3xl md:text-4xl text-primary text-center mb-12">
             Technical Advantages
           </h2>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid sm:grid-cols-2 gap-6">
             {technicalAdvantages.map((item) => (
               <div
                 key={item.title}

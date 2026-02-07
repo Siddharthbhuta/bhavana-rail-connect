@@ -32,7 +32,8 @@ const Header = () => {
     { name: 'Home', href: '/', hasDropdown: false },
     { name: 'Products', href: '/products', hasDropdown: true },
     { name: 'About Us', href: '/about', hasDropdown: true },
-    { name: 'Contact', href: '/contact', hasDropdown: false },
+    { name: 'Clients', href: '/clients', hasDropdown: false },
+    { name: 'Contact Us', href: '/contact', hasDropdown: false },
   ];
 
   return (
@@ -97,7 +98,7 @@ const Header = () => {
           {/* CTA Button - Orange-Red Accent */}
           <div className="hidden lg:block">
             <Link to="/contact" className="btn-accent">
-              Get Quote
+              Get a Quote
               <ChevronDown className="w-4 h-4 rotate-[-90deg]" />
             </Link>
           </div>
@@ -126,7 +127,7 @@ const Header = () => {
                 </Link>
               ))}
               <Link to="/contact" className="btn-accent w-full mt-4">
-                Get Quote
+                Get a Quote
               </Link>
             </div>
           </div>

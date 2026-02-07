@@ -17,7 +17,7 @@ const CTASection = () => {
                 maintenance, our team is ready to assist. Get in touch for a detailed 
                 quote tailored to your requirements.
               </p>
-              <div className="flex flex-wrap gap-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4">
                 <Link to="/contact" className="btn-accent">
                   Request Quote
                   <ArrowRight className="w-4 h-4" />

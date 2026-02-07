@@ -6,8 +6,8 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32">
-        <section className="py-16 bg-background">
+      <main className="pt-28 md:pt-32">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
@@ -21,7 +21,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {/* Address Card */}
               <div className="bg-card rounded-xl shadow-sm border-t-4 border-t-accent p-8 text-center">
                 <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center mx-auto mb-6">

@@ -11,7 +11,7 @@ const Products = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="pt-40 pb-16">
+      <section className="pt-28 md:pt-40 pb-12 md:pb-16">
         <div className="container-custom">
           <h1 className="font-display font-bold text-4xl md:text-5xl text-foreground mb-4">
             Our Products
@@ -23,9 +23,9 @@ const Products = () => {
       </section>
 
       {/* Product Categories */}
-      <section className="py-16">
+      <section className="py-12 md:py-16">
         <div className="container-custom">
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Bus Components */}
             <Link 
               to="/products/bus" 

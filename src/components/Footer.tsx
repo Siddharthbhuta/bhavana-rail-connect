@@ -16,7 +16,8 @@ const Footer = () => {
       { name: 'Home', href: '/' },
       { name: 'Products', href: '/products' },
       { name: 'About Us', href: '/about' },
-      { name: 'Contact', href: '/contact' },
+      { name: 'Clients', href: '/clients' },
+      { name: 'Contact Us', href: '/contact' },
     ],
     resources: [
       { name: 'Product Catalog', href: '/catalog' },
@@ -102,7 +103,12 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">DGS Sheetal Regalia,<br />Borivali-East, Mumbai - 400066</span>
+                <span className="text-primary-foreground/80 text-sm">
+                  R K Sales Corporation,<br />
+                  DGS Sheetal Regalia, Office No - 06 B,<br />
+                  1st Floor, Nensey Colony,<br />
+                  Borivali-East, Mumbai - 400066, India
+                </span>
               </li>
             </ul>
           </div>

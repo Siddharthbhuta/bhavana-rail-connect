@@ -47,6 +47,12 @@ const ClientsSection = () => {
             </div>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <a href="/clients" className="btn-accent inline-flex items-center justify-center">
+            Read More
+          </a>
+        </div>
       </div>
     </section>
   );

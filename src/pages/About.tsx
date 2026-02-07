@@ -132,9 +132,9 @@ const About = () => {
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      <main className="pt-32">
+      <main className="pt-28 md:pt-32">
         {/* Our Story Section */}
-        <section id="story" className="py-16 bg-background scroll-mt-28">
+        <section id="story" className="py-12 md:py-16 bg-background scroll-mt-24 md:scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
@@ -182,7 +182,7 @@ const About = () => {
         </section>
 
         {/* Mission & Vision Section */}
-        <section className="py-16 bg-muted/30">
+        <section className="py-12 md:py-16 bg-muted/30">
           <div className="container-custom">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
               {/* Our Mission Card */}
@@ -215,7 +215,7 @@ const About = () => {
         </section>
 
         {/* Core Values Section */}
-        <section className="py-16 bg-background">
+        <section className="py-12 md:py-16 bg-background">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
@@ -245,7 +245,7 @@ const About = () => {
         </section>
 
         {/* Leadership Team Section */}
-        <section id="team" className="py-16 bg-muted/30 scroll-mt-28">
+        <section id="team" className="py-12 md:py-16 bg-muted/30 scroll-mt-24 md:scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
@@ -295,7 +295,7 @@ const About = () => {
         </section>
 
         {/* Certifications Section */}
-        <section id="certifications" className="py-16 bg-background scroll-mt-28">
+        <section id="certifications" className="py-12 md:py-16 bg-background scroll-mt-24 md:scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
