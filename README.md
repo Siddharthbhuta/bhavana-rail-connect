@@ -1,73 +1,66 @@
-# Welcome to your Lovable project
+# Bhavana Rail Connect
 
-## Project info
+Bhavana Rail Connect is a professional web application designed for a company that sells **bus and railway components**. The platform showcases products, services, and client information with a clean, responsive, and business-focused interface.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+The website is built to ensure clarity, scalability, and ease of maintenance while providing a smooth experience across desktop and mobile devices.
 
-## How can I edit this code?
+---
 
-There are several ways of editing your application.
+## 🚆🚌 Business Overview
 
-**Use Lovable**
+Bhavana Rail Connect specializes in:
+- Railway components and systems
+- Bus components and related products
+- Transport infrastructure solutions
+- Client-focused B2B offerings
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+The website acts as a digital catalogue and brand presence for the company.
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+## 🚀 Features
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- Responsive and modern UI
+- Separate product pages for **Bus** and **Railway** components
+- Reusable, component-based frontend architecture
+- Optimized layout for desktop and mobile devices
+- Clean and maintainable codebase
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+---
 
-Follow these steps:
+## 🛠️ Tech Stack
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- **Frontend:** React + TypeScript
+- **Styling:** CSS / Tailwind CSS
+- **Build Tool:** Vite / React Scripts
+- **Version Control:** Git & GitHub
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+⚙️ Getting Started
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Prerequisites
+- Node.js (v16 or later)
+- npm or yarn
+
+### Installation
+```bash
+git clone <repository-url>
+cd bhavana-rail-connect
+npm install
+Run Locally
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+# Production Build
+npm run build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Version Control Workflow
+git status
+git add .
+git commit -m "Describe your changes"
+git push origin main
 
-**Use GitHub Codespaces**
+This project is proprietary and developed for client use.
+Unauthorized copying, redistribution, or reuse is prohibited.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
 
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
