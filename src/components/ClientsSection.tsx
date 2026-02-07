@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 const clientLogos = [
   { name: 'Client 1', logo: '/clients/client1.jpg' },
   { name: 'Client 2', logo: '/clients/client2.jpg' },
@@ -49,9 +51,9 @@ const ClientsSection = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <a href="/clients" className="btn-accent inline-flex items-center justify-center">
+          <Link to="/clients" className="btn-accent inline-flex items-center justify-center">
             Read More
-          </a>
+          </Link>
         </div>
       </div>
     </section>
