@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react';
-import { ChevronDown, Menu, X, Phone, Mail, Train } from 'lucide-react';
+import { ChevronDown, Menu, X, Phone, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import MegaMenu from './MegaMenu';
+import logo from '@/assets/logo.png';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -54,8 +55,8 @@ const Header = () => {
         <div className="container-custom flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center">
-              <Train className="w-7 h-7 text-white" />
+            <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center overflow-hidden">
+              <img src={logo} alt="Bhavana Trading Co" className="w-10 h-10 object-contain" />
             </div>
             <div>
               <h1 className="font-display font-bold text-lg text-foreground leading-tight">

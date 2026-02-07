@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Train, Facebook, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import { Facebook, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
+import logo from '@/assets/logo.png';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -35,8 +36,8 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
-                <Train className="w-7 h-7 text-accent-foreground" />
+              <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="Bhavana Trading Co" className="w-10 h-10 object-contain" />
               </div>
               <div>
                 <h3 className="font-display font-bold text-lg text-white">Bhavana Trading Co</h3>
