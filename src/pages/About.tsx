@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CertificateCard from '@/components/CertificateCard';
@@ -21,6 +23,19 @@ import cirtJ3215 from '@/assets/certificates/cirt-j3215.jpg';
 import isoCertificate from '@/assets/certificates/iso-certificate.jpg';
 
 const About = () => {
+  const { hash } = useLocation();
+
+  // Scroll to section when navigating from mega menu (e.g. /about#team)
+  useEffect(() => {
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  }, [hash]);
+
   const coreValues = [
     {
       icon: Diamond,
@@ -119,7 +134,7 @@ const About = () => {
       <Header />
       <main className="pt-32">
         {/* Our Story Section */}
-        <section id="story" className="py-16 bg-background">
+        <section id="story" className="py-16 bg-background scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
@@ -230,7 +245,7 @@ const About = () => {
         </section>
 
         {/* Leadership Team Section */}
-        <section id="team" className="py-16 bg-muted/30">
+        <section id="team" className="py-16 bg-muted/30 scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">
@@ -280,7 +295,7 @@ const About = () => {
         </section>
 
         {/* Certifications Section */}
-        <section id="certifications" className="py-16 bg-background">
+        <section id="certifications" className="py-16 bg-background scroll-mt-28">
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">

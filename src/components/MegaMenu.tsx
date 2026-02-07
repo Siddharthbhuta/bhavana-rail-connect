@@ -1,5 +1,5 @@
-import { Link, useNavigate } from 'react-router-dom';
-import { Train, Bus, Users, Building2, Award } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { Train, Bus, Package, Users, Building2, Award } from 'lucide-react';
 import busProducts from '@/assets/bus-products.jpg';
 import trainProducts from '@/assets/train-products.png';
 
@@ -42,11 +42,11 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
         onMouseEnter={onMenuEnter}
         onMouseLeave={onMenuLeave}
       >
-        <div className="bg-white border-b border-gray-200 shadow-2xl">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-2 gap-8">
+        <div className="bg-card border-b border-border shadow-2xl">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {/* Bus Components Box */}
-              <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/bus" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
                     src={busProducts}
@@ -63,14 +63,14 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                     </h3>
                   </div>
                 </Link>
-                <div className="p-4 bg-gray-50">
+                <div className="p-4 bg-muted/50">
                   <ul className="space-y-2">
                     {busCategories.map((item) => (
                       <li key={item}>
                         <Link
                           to={`/products/bus/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           onClick={onClose}
-                          className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
+                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -82,7 +82,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
               </div>
 
               {/* Train Components Box */}
-              <div className="group rounded-xl border border-gray-200 overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/train" onClick={onClose} className="block relative h-40 overflow-hidden">
                   <img
                     src={trainProducts}
@@ -99,14 +99,14 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                     </h3>
                   </div>
                 </Link>
-                <div className="p-4 bg-gray-50">
+                <div className="p-4 bg-muted/50">
                   <ul className="space-y-2">
                     {trainCategories.map((item) => (
                       <li key={item}>
                         <Link
                           to={`/products/train/${item.toLowerCase().replace(/\s+/g, '-')}`}
                           onClick={onClose}
-                          className="text-sm text-gray-600 hover:text-accent transition-colors flex items-center gap-2"
+                          className="text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-2"
                         >
                           <span className="w-1.5 h-1.5 rounded-full bg-accent/50" />
                           {item}
@@ -116,9 +116,39 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                   </ul>
                 </div>
               </div>
+
+              {/* Other Products Box */}
+              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
+                <Link to="/products/other" onClick={onClose} className="block relative h-40 overflow-hidden bg-primary/10">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <Package className="w-16 h-16 text-primary/60 group-hover:scale-110 transition-transform duration-500" />
+                  </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
+                  <div className="absolute bottom-3 left-4 flex items-center gap-2">
+                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
+                      <Package className="w-5 h-5 text-accent-foreground" />
+                    </div>
+                    <h3 className="font-display font-bold text-lg text-foreground">
+                      Other Products
+                    </h3>
+                  </div>
+                </Link>
+                <div className="p-4 bg-muted/50">
+                  <p className="text-sm text-muted-foreground mb-3">
+                    Steering, door systems, safety equipment, and more.
+                  </p>
+                  <Link
+                    to="/products/other"
+                    onClick={onClose}
+                    className="text-sm font-medium text-accent hover:underline inline-flex items-center gap-1"
+                  >
+                    View all other products
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            <div className="mt-6 pt-4 border-t border-gray-200 text-center">
+            <div className="mt-6 pt-4 border-t border-border text-center">
               <Link to="/products" onClick={onClose} className="btn-accent text-sm py-2 px-6 inline-block">
                 View All Products
               </Link>
@@ -130,12 +160,6 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
   }
 
   if (type === 'About Us') {
-    const handleAboutClick = (item: typeof aboutItems[0]) => {
-      onClose?.();
-      // Navigate to about page and then scroll to the section
-      window.location.href = item.href + item.hash;
-    };
-
     return (
       <div
         className="fixed left-0 right-0 top-[132px] z-[60] opacity-100 visible transition-all duration-300 ease-out pointer-events-auto"
@@ -146,10 +170,11 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-3 gap-6">
               {aboutItems.map((item) => (
-                <button
+                <Link
                   key={item.name}
-                  onClick={() => handleAboutClick(item)}
-                  className="group bg-card border border-border rounded-xl p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left"
+                  to={`${item.href}${item.hash}`}
+                  onClick={onClose}
+                  className="group bg-card border border-border rounded-xl p-4 hover:border-accent/50 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 text-left block"
                 >
                   <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 transition-colors">
                     <item.icon className="w-5 h-5 text-accent" />
@@ -160,7 +185,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                   <p className="text-xs text-muted-foreground">
                     {item.description}
                   </p>
-                </button>
+                </Link>
               ))}
             </div>
           </div>

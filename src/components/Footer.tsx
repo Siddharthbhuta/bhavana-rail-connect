@@ -7,17 +7,15 @@ const Footer = () => {
 
   const footerLinks = {
     products: [
-      { name: 'Railway Bogies', href: '/products/bogie' },
       { name: 'Bus Components', href: '/products/bus' },
-      { name: 'Couplers & Draft Gear', href: '/products/couplers' },
-      { name: 'Brake Systems', href: '/products/brakes' },
+      { name: 'Railway Components', href: '/products/train' },
+      { name: 'Other Products', href: '/products' },
       { name: 'All Products', href: '/products' },
     ],
     company: [
+      { name: 'Home', href: '/' },
+      { name: 'Products', href: '/products' },
       { name: 'About Us', href: '/about' },
-      { name: 'Our Team', href: '/about#team' },
-      { name: 'Certifications', href: '/about#certifications' },
-      { name: 'Careers', href: '/careers' },
       { name: 'Contact', href: '/contact' },
     ],
     resources: [
@@ -36,9 +34,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center overflow-hidden">
-                <img src={logo} alt="Bhavana Trading Co" className="w-10 h-10 object-contain" />
-              </div>
+              <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
               <div>
                 <h3 className="font-display font-bold text-lg text-white">Bhavana Trading Co</h3>
                 <p className="text-xs text-accent">Railway & Bus Components</p>

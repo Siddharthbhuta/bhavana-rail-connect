@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Bus, Train, ArrowRight } from 'lucide-react';
+import { Bus, Train, Package, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import busProducts from '@/assets/bus-products.jpg';
@@ -25,7 +25,7 @@ const Products = () => {
       {/* Product Categories */}
       <section className="py-16">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {/* Bus Components */}
             <Link 
               to="/products/bus" 
@@ -85,6 +85,34 @@ const Products = () => {
                 </p>
                 <div className="flex items-center gap-2 text-accent font-medium">
                   Browse Categories
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </div>
+              </div>
+            </Link>
+
+            {/* Other Products */}
+            <Link
+              to="/products/other"
+              className="group relative rounded-2xl overflow-hidden border border-border hover:border-accent/50 transition-all duration-300"
+            >
+              <div className="relative h-64 bg-primary/10 flex items-center justify-center">
+                <Package className="w-24 h-24 text-primary/40 group-hover:scale-110 transition-transform duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
+              </div>
+              <div className="p-6">
+                <div className="flex items-center gap-3 mb-3">
+                  <div className="w-12 h-12 rounded-lg bg-accent flex items-center justify-center">
+                    <Package className="w-6 h-6 text-accent-foreground" />
+                  </div>
+                  <h2 className="font-display font-bold text-2xl text-foreground group-hover:text-accent transition-colors">
+                    Other Products
+                  </h2>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Steering assemblies, door latches & hinges, safety towing hooks, lock mechanisms, reflective tape, and bracket assemblies.
+                </p>
+                <div className="flex items-center gap-2 text-accent font-medium">
+                  View All
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>

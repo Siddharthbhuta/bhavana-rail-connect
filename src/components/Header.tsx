@@ -53,11 +53,9 @@ const Header = () => {
       {/* Main Navigation - White background */}
       <nav className="bg-white border-b border-border">
         <div className="container-custom flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo - no background wrapper */}
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-lg bg-primary flex items-center justify-center overflow-hidden">
-              <img src={logo} alt="Bhavana Trading Co" className="w-10 h-10 object-contain" />
-            </div>
+            <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
             <div>
               <h1 className="font-display font-bold text-lg text-foreground leading-tight">
                 Bhavana Trading Co
