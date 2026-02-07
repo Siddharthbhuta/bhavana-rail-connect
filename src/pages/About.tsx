@@ -1,7 +1,7 @@
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import CertificateCard from '@/components/CertificateCard';
 import { 
-  Building2, 
   Target, 
   Eye, 
   Diamond, 
@@ -10,9 +10,13 @@ import {
   Users, 
   Handshake, 
   Leaf,
-  Award,
   User
 } from 'lucide-react';
+
+// Import certificate images
+import cirtJ3214 from '@/assets/certificates/cirt-j3214.jpg';
+import cirtJ3215 from '@/assets/certificates/cirt-j3215.jpg';
+import isoCertificate from '@/assets/certificates/iso-certificate.jpg';
 
 const About = () => {
   const coreValues = [
@@ -64,22 +68,22 @@ const About = () => {
     },
   ];
 
-  // Placeholder for certificates - easy to update later
+  // Certificates with actual images
   const certificates = [
     {
-      name: 'ISO 9001:2015',
-      description: 'Quality Management System Certification',
-      image: null, // Add certificate image path here
+      name: 'ISO 9001:2000',
+      description: 'Quality Management System Certification by Orion Registrar, Inc., USA',
+      image: isoCertificate,
     },
     {
-      name: 'Certificate Name',
-      description: 'Certificate description',
-      image: null,
+      name: 'CIRT Test Report - J3214',
+      description: 'Roof Grab Handle (Revolving Type) - Flammability Test Certification',
+      image: cirtJ3214,
     },
     {
-      name: 'Certificate Name',
-      description: 'Certificate description',
-      image: null,
+      name: 'CIRT Test Report - J3215',
+      description: 'First Aid Box - Flammability Test Certification',
+      image: cirtJ3215,
     },
   ];
 
@@ -266,29 +270,12 @@ const About = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
               {certificates.map((cert, index) => (
-                <div 
+                <CertificateCard
                   key={index}
-                  className="bg-card rounded-xl shadow-sm border p-6 text-center hover:shadow-md transition-shadow"
-                >
-                  {/* Placeholder for certificate image */}
-                  <div className="h-32 bg-muted/50 rounded-lg flex items-center justify-center mb-4">
-                    {cert.image ? (
-                      <img 
-                        src={cert.image} 
-                        alt={cert.name}
-                        className="w-full h-full object-contain p-4"
-                      />
-                    ) : (
-                      <Award className="w-16 h-16 text-accent/30" />
-                    )}
-                  </div>
-                  <h3 className="font-display text-lg font-bold text-foreground mb-2">
-                    {cert.name}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {cert.description}
-                  </p>
-                </div>
+                  name={cert.name}
+                  description={cert.description}
+                  image={cert.image}
+                />
               ))}
             </div>
           </div>
