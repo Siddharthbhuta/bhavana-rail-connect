@@ -1,25 +1,21 @@
-import { Shield, Award, Truck, Cog } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 const features = [
   {
-    icon: Shield,
-    title: 'Quality Assurance',
-    description: 'Every component undergoes rigorous testing to meet RDSO and international quality standards.',
+    title: 'Durability & Reliability',
+    description: 'Our products are engineered for maximum durability and long-term reliability in challenging conditions.',
   },
   {
-    icon: Award,
-    title: 'Certified Excellence',
-    description: 'ISO 9001:2015 certified with approvals from major railway authorities across India.',
+    title: 'Cost-Effective Solutions',
+    description: 'Competitive pricing without compromising on quality or performance standards.',
   },
   {
-    icon: Cog,
-    title: 'Precision Manufacturing',
-    description: 'State-of-the-art CNC machinery and skilled craftsmen ensure micron-level accuracy.',
+    title: 'Technical Support',
+    description: 'Expert technical guidance and after-sales support for all our products and services.',
   },
   {
-    icon: Truck,
-    title: 'Pan-India Delivery',
-    description: 'Reliable logistics network ensuring timely delivery to any location in India.',
+    title: 'Customization Available',
+    description: 'Flexible manufacturing options to meet specific client requirements and specifications.',
   },
 ];
 
@@ -39,14 +35,16 @@ const WhyUsSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {features.map((feature) => (
-            <div key={feature.title} className="bg-card rounded-xl border border-border p-6 text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
-              <div className="w-14 h-14 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4">
-                <feature.icon className="w-7 h-7 text-accent" />
+            <div key={feature.title} className="bg-card rounded-xl border-l-4 border-l-accent border border-border p-6 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-6 h-6 text-accent flex-shrink-0 mt-0.5" />
+                <div>
+                  <h3 className="font-display font-bold text-foreground mb-2">{feature.title}</h3>
+                  <p className="text-sm text-muted-foreground">{feature.description}</p>
+                </div>
               </div>
-              <h3 className="font-semibold text-foreground mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.description}</p>
             </div>
           ))}
         </div>
