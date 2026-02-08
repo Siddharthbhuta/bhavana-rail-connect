@@ -466,4 +466,57 @@
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-10px); }
   }
+
+  @keyframes logo-marquee-right {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+  }
+
+  .logo-marquee-stack {
+    @apply grid gap-6;
+  }
+
+  .logo-marquee {
+    @apply w-full overflow-hidden;
+  }
+
+  .logo-track {
+    @apply flex items-center gap-6;
+    width: max-content;
+  }
+
+  .logo-marquee-right {
+    animation: logo-marquee-right 28s linear infinite;
+  }
+
+  .logo-marquee-right-slow {
+    animation: logo-marquee-right 28s linear infinite;
+  }
+
+  .logo-card {
+    @apply bg-card border border-border rounded-xl p-4 flex items-center justify-center transition-all duration-300;
+    min-height: 6rem;
+    min-width: 10rem;
+  }
+
+  .logo-card:hover {
+    box-shadow: var(--shadow-md);
+  }
+
+  .logo-image {
+    @apply w-auto object-contain opacity-80 transition-opacity;
+    max-height: 3rem;
+  }
+
+  .logo-card:hover .logo-image {
+    @apply opacity-100;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .logo-marquee-right,
+    .logo-marquee-right-slow {
+      animation: none;
+      transform: translateX(0);
+    }
+  }
 }

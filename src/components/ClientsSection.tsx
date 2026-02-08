@@ -17,6 +17,34 @@ const clientLogos = [
 ];
 
 const ClientsSection = () => {
+  const rowOne = clientLogos.filter((_, index) => index % 2 === 0);
+  const rowTwo = clientLogos.filter((_, index) => index % 2 !== 0);
+
+  const renderRow = (row: typeof clientLogos, speedClass: string) => (
+    <div className="logo-marquee">
+      <div className={`logo-track ${speedClass}`}>
+        {[...row, ...row].map((client, index) => (
+          <div
+            key={`${client.name}-${index}`}
+            className="logo-card"
+            aria-hidden={index >= row.length}
+          >
+            <img
+              src={client.logo}
+              alt={client.name}
+              className="logo-image"
+              onError={(e) => {
+                const el = e.target as HTMLImageElement;
+                el.src = '/placeholder.svg';
+                el.onerror = null;
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+
   return (
     <section className="section-padding bg-background">
       <div className="container-custom">
@@ -30,24 +58,9 @@ const ClientsSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6">
-          {clientLogos.map((client) => (
-            <div
-              key={client.name}
-              className="bg-card border border-border rounded-xl p-4 min-h-24 flex items-center justify-center hover:shadow-md transition-all duration-300"
-            >
-              <img
-                src={client.logo}
-                alt={client.name}
-                className="max-h-12 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity"
-                onError={(e) => {
-                  const el = e.target as HTMLImageElement;
-                  el.src = '/placeholder.svg';
-                  el.onerror = null;
-                }}
-              />
-            </div>
-          ))}
+        <div className="logo-marquee-stack">
+          {renderRow(rowOne, 'logo-marquee-right-slow')}
+          {renderRow(rowTwo, 'logo-marquee-right')}
         </div>
 
         <div className="mt-10 text-center">
