@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 
 const clientLogos = [
-  { name: 'Client 1', logo: '/clients/client1.jpg' },
   { name: 'Client 2', logo: '/clients/client2.jpg' },
   { name: 'Client 3', logo: '/clients/client3.jpg' },
   { name: 'Client 4', logo: '/clients/client4.jpg' },
@@ -11,8 +10,6 @@ const clientLogos = [
   { name: 'Client 8', logo: '/clients/client8.jpg' },
   { name: 'Client 9', logo: '/clients/client9.jpg' },
   { name: 'Client 10', logo: '/clients/client10.jpg' },
-  { name: 'Client 11', logo: '/clients/client11.jpg' },
-  { name: 'Client 12', logo: '/clients/client12.jpg' },
   { name: 'Client 13', logo: '/clients/client13.JPG' },
 ];
 

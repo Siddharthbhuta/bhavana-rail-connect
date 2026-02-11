@@ -43,7 +43,7 @@ const Footer = () => {
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-sm">
               India's trusted manufacturer of premium railway and bus components. 
-              Delivering quality and reliability since 1998.
+              Delivering quality and reliability since 1995.
             </p>
             <div className="flex gap-4">
               <a href="#" className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center hover:bg-accent hover:border-accent transition-colors group">
@@ -99,7 +99,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">rksales27@gmail.com</span>
+                <span className="text-primary-foreground/80 text-sm">bhavana.trading@yahoo.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />

@@ -66,10 +66,10 @@ const Contact = () => {
                 </h2>
                 <div className="text-muted-foreground">
                   <a 
-                    href="mailto:rksales27@gmail.com" 
+                    href="mailto:bhavana.trading@yahoo.com" 
                     className="text-accent hover:underline font-medium"
                   >
-                    rksales27@gmail.com
+                    bhavana.trading@yahoo.com
                   </a>
                   <p className="mt-2 text-sm">Response within 24 hours</p>
                 </div>

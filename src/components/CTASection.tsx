@@ -49,7 +49,7 @@ const CTASection = () => {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
-                  <p className="text-gray-600">rksales27@gmail.com</p>
+                  <p className="text-gray-600">bhavana.trading@yahoo.com</p>
                   <p className="text-gray-500 text-sm">Response within 24 hours</p>
                 </div>
               </div>

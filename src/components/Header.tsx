@@ -41,12 +41,12 @@ const Header = () => {
       {/* Top Bar - Dark Teal Background */}
       <div className="bg-primary py-2">
         <div className="container-custom flex items-center justify-between text-sm">
-          <a href="mailto:rksales27@gmail.com" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
+          <a href="mailto:bhavana.trading@yahoo.com" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
             <Mail className="w-4 h-4" />
-            <span className="hidden sm:inline">rksales27@gmail.com</span>
+            <span className="hidden sm:inline">bhavana.trading@yahoo.com</span>
           </a>
           <span className="text-primary-foreground font-medium hidden md:block">
-            Premium Railway & Bus Components Since 1998
+            Premium Railway & Bus Components Since 1995
           </span>
         </div>
       </div>

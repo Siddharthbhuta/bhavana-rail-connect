@@ -29,7 +29,7 @@ const WhyUsSection = () => {
             Trusted by Railways & Bus Manufacturers
           </h2>
           <p className="text-muted-foreground text-lg">
-            With over 25 years of experience in railway and bus component manufacturing, 
+            With over 31 years of experience in railway and bus component manufacturing,
             Bhavana Trading Co has established itself as a reliable partner for 
             Indian Railways, bus manufacturers, and private operators.
           </p>
