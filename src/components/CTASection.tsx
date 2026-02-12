@@ -9,7 +9,7 @@ const CTASection = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             {/* Left Content */}
             <div>
-              <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-gray-900">
+              <h2 className="font-display text-3xl md:text-4xl font-bold mb-6 text-primary">
                 Ready to Partner with Us?
               </h2>
               <p className="text-gray-600 text-lg mb-8">
@@ -36,9 +36,9 @@ const CTASection = () => {
                   <Phone className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Rakesh Mehta</h3>
+                  <h3 className="font-semibold text-primary mb-1">Rakesh Mehta</h3>
                   <p className="text-gray-600">8767333312 / 9821295540</p>
-                  <h3 className="font-semibold text-gray-900 mb-1 mt-2">Vipul Mehta</h3>
+                  <h3 className="font-semibold text-primary mb-1 mt-2">Vipul Mehta</h3>
                   <p className="text-gray-600">9821502275 / 8080502275</p>
                 </div>
               </div>
@@ -48,7 +48,7 @@ const CTASection = () => {
                   <Mail className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Email</h3>
+                  <h3 className="font-semibold text-primary mb-1">Email</h3>
                   <p className="text-gray-600">bhavana.trading@yahoo.com</p>
                   <p className="text-gray-500 text-sm">Response within 24 hours</p>
                 </div>
@@ -59,9 +59,9 @@ const CTASection = () => {
                   <MapPin className="w-6 h-6 text-accent" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-1">Address</h3>
+                  <h3 className="font-semibold text-primary mb-1">Address</h3>
                   <p className="text-gray-600">
-                    R K Sales Corporation,<br />
+                    BHAVANA TRADING CO.,<br />
                     DGS Sheetal Regalia, Office No - 06 B,<br />
                     1st Floor, Nensey Colony,<br />
                     Borivali-East, Mumbai - 400066, India

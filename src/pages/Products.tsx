@@ -17,7 +17,7 @@ const Products = () => {
             Our Products
           </h1>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Premium quality components for railway and bus manufacturing. Browse our extensive catalog of precision-engineered parts.
+            Premium quality components for bus body manufacturing and railway coach workshops, Browse our extensive catalog.
           </p>
         </div>
       </section>

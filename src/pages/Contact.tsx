@@ -31,7 +31,7 @@ const Contact = () => {
                   Address
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  R K Sales Corporation,<br />
+                  BHAVANA TRADING CO.,<br />
                   DGS Sheetal Regalia,<br />
                   Office No - 06 B, 1st Floor,<br />
                   Nensey Colony,<br />

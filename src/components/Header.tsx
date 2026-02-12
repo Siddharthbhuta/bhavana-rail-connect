@@ -46,7 +46,7 @@ const Header = () => {
             <span className="hidden sm:inline">bhavana.trading@yahoo.com</span>
           </a>
           <span className="text-primary-foreground font-medium hidden md:block">
-            Premium Railway & Bus Components Since 1995
+            Premium Bus Body and Railway Coach Components Since 1995
           </span>
         </div>
       </div>
@@ -58,10 +58,13 @@ const Header = () => {
           <Link to="/" className="flex items-center gap-3">
             <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
             <div>
-              <h1 className="font-display font-bold text-lg text-foreground leading-tight">
-                Bhavana Trading Co
+              <h1 className="font-display font-bold text-foreground leading-tight uppercase whitespace-nowrap">
+                <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>
+                <span className="text-sm md:text-base tracking-[0.2em] ml-2">TRADING CO.</span>
               </h1>
-              <p className="text-xs text-muted-foreground">Railway & Bus Components</p>
+              <p className="text-[11px] md:text-xs leading-tight text-muted-foreground max-w-[17rem]">
+                Bus Body and Railway Coach Components
+              </p>
             </div>
           </Link>
 

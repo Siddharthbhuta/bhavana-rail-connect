@@ -71,13 +71,13 @@ const About = () => {
   const leadershipTeam = [
     {
       name: 'Rakesh Mehta',
-      position: 'Co-Founder & Director',
+      position: 'Partner',
       image: null, // Add image: import rakeshImage from '@/assets/rakesh-mehta.jpg' and set here
       bio: 'Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.',
     },
     {
       name: 'Vipul Mehta',
-      position: 'Co-Founder & Director',
+      position: 'Partner',
       image: null, // Add image: import vipulImage from '@/assets/vipul-mehta.jpg' and set here
       bio: 'Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.',
     },
@@ -129,13 +129,10 @@ const About = () => {
               
               <div className="prose prose-lg max-w-none text-muted-foreground">
                 <p className="text-lg leading-relaxed mb-6">
-                  Bhavana Trading Company was founded with a vision to become a leading supplier of high-quality bus body components and railway products. Over the past 31 years, we have consistently delivered excellence through innovation, quality assurance, and customer-centric approach.
+                  Bhavana Trading Company was founded with a vision to become a leading supplier of high-quality bus body components and railway coach products. Over the past 31 years, we have consistently delivered excellence through innovation, quality assurance, and customer-centric approach.
                 </p>
                 <p className="text-lg leading-relaxed mb-6">
-                  Our journey began with a commitment to understanding customer needs and providing tailored solutions. Today, we are proud to serve government agencies, private transport companies, and railway authorities across India. Our success is built on the foundation of trust, reliability, and quality that our customers have come to expect.
-                </p>
-                <p className="text-lg leading-relaxed mb-6">
-                  We are proud to serve leading bus body builders, private transport companies, government agencies, and railway coach worksheds.
+                  Our journey began with a commitment to understanding customer needs and providing tailored solutions. Today, we are proud to serve leading bus body builders, private transport companies, government agencies, and railway coach worksheds across India. Our success is built on the foundation of trust, reliability, and quality that our customers have come to expect.
                 </p>
                 <p className="text-lg leading-relaxed">
                   We maintain state-of-the-art manufacturing facilities equipped with modern technology and skilled workforce. Every product undergoes rigorous quality checks to ensure it meets international standards and exceeds customer expectations.
@@ -237,7 +234,7 @@ const About = () => {
 
             <div className="max-w-3xl mx-auto mt-6 bg-card rounded-xl shadow-sm border border-border p-6 text-center">
               <p className="text-muted-foreground text-base leading-relaxed">
-                With over 30+ years of experience in the bus body and railway component industry,
+                With over 30+ years of experience in the bus body and railway coach component industry,
                 Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.
               </p>
             </div>

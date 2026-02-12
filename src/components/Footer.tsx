@@ -37,12 +37,17 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-3 mb-6">
               <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
               <div>
-                <h3 className="font-display font-bold text-lg text-white">Bhavana Trading Co</h3>
-                <p className="text-xs text-accent">Railway & Bus Components</p>
+                <h3 className="font-display font-bold text-white leading-tight uppercase whitespace-nowrap">
+                  <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>
+                  <span className="text-sm md:text-base tracking-[0.2em] ml-2">TRADING CO.</span>
+                </h3>
+                <p className="text-[11px] md:text-xs leading-tight text-accent max-w-[17rem]">
+                  Bus Body and Railway Coach Components
+                </p>
               </div>
             </Link>
             <p className="text-primary-foreground/80 mb-6 max-w-sm">
-              India's trusted manufacturer of premium railway and bus components. 
+              India's trusted manufacturer of premium bus body & railway coach components. 
               Delivering quality and reliability since 1995.
             </p>
             <div className="flex gap-4">
@@ -95,7 +100,10 @@ const Footer = () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">8767333312 / 9821295540</span>
+                <span className="text-primary-foreground/80 text-sm">
+                  <span className="block whitespace-nowrap">Rakesh Mehta- 8767333312 / 9821295540</span>
+                  <span className="block whitespace-nowrap">Vipul Mehta- 9821502275 / 8080502275</span>
+                </span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -104,7 +112,7 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/80 text-sm">
-                  R K Sales Corporation,<br />
+                  BHAVANA TRADING CO.,<br />
                   DGS Sheetal Regalia, Office No - 06 B,<br />
                   1st Floor, Nensey Colony,<br />
                   Borivali-East, Mumbai - 400066, India

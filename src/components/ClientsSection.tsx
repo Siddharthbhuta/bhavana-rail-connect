@@ -43,7 +43,15 @@ const ClientsSection = () => {
   );
 
   return (
-    <section className="section-padding bg-background">
+    <section
+      className="section-padding"
+      style={{
+        backgroundImage:
+          "linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)), url('/clients/background-clients.png')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+      }}
+    >
       <div className="container-custom">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Clients</span>
@@ -51,7 +59,7 @@ const ClientsSection = () => {
             Trusted by Leading Brands
           </h2>
           <p className="text-muted-foreground text-lg">
-            We are proud to serve reputed organizations across railway and bus industries.
+            We are proud to serve government organizations, bus body builders and railway coach workshops.
           </p>
         </div>
 

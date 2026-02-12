@@ -1,4 +1,4 @@
-import { Building2, Train, Bus, Users, Star } from 'lucide-react';
+import { Building2, Train, Bus, Users } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
@@ -23,35 +23,22 @@ const clientTypes = [
     accentClass: 'border-l-red-500 text-red-500',
   },
   {
-    title: 'Indian Railways',
-    description: 'Railway component supplier meeting all specifications and regulatory requirements',
-    icon: Train,
+    title: 'Indian Bus Manufacturers',
+    description: 'Leading bus body builders, travel operators and logistics companies',
+    icon: Users,
     accentClass: 'border-l-red-500 text-red-500',
   },
   {
     title: 'Municipal Transport',
-    description: 'DTC Delhi and other city-based transport corporations',
+    description: 'Brihanmumbai electricity and transports undertaking (BEST) and other city-based transport corporations',
     icon: Building2,
     accentClass: 'border-l-red-500 text-red-500',
   },
   {
-    title: 'Indian Bus Manufacturers',
-    description: 'Tour operators, manufacturers, and logistics companies',
-    icon: Users,
+    title: 'Indian Railways',
+    description: 'Railway coach component supplier meeting all specifications and regulatory requirements',
+    icon: Train,
     accentClass: 'border-l-red-500 text-red-500',
-  },
-];
-
-const feedback = [
-  {
-    quote:
-      '"Bhavana Trading has been a reliable partner for our bus fleet maintenance. Their products are durable and their service is exceptional. Highly recommended!"',
-    author: 'Procurement Manager, APSRTC',
-  },
-  {
-    quote:
-      '"26 years of consistent quality and service. They understand our needs and deliver exactly what we expect. A trustworthy partner."',
-    author: 'Operations Director, Tour Company',
   },
 ];
 
@@ -60,7 +47,15 @@ const Clients = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main className="pt-28 md:pt-32">
-        <section className="py-12 md:py-16 bg-background">
+        <section
+          className="py-12 md:py-16"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)), url('/clients/background-clients.png')",
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
           <div className="container-custom">
             <div className="text-center mb-12">
               <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Clients</span>
@@ -68,7 +63,7 @@ const Clients = () => {
                 Trusted by Leading Brands
               </h1>
               <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                We are proud to serve reputed organizations across railway and bus industries.
+                We are proud to serve Government organizations, bus body builders and railway coach workshops.
               </p>
             </div>
 
@@ -115,34 +110,6 @@ const Clients = () => {
           </div>
         </section>
 
-        <section className="py-12 md:py-16 bg-muted/30">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-                Client Feedback
-              </h2>
-            </div>
-            <div className="grid sm:grid-cols-2 gap-6">
-              {feedback.map((item) => (
-                <div
-                  key={item.author}
-                  className="bg-card rounded-2xl border border-border p-8 shadow-sm"
-                >
-                  <div className="flex gap-1 text-yellow-400 mb-4">
-                    {Array.from({ length: 5 }).map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-yellow-400" />
-                    ))}
-                  </div>
-                  <p className="text-muted-foreground italic mb-6">{item.quote}</p>
-                  <div className="flex items-center gap-2 text-foreground font-semibold">
-                    <Users className="w-5 h-5 text-muted-foreground" />
-                    {item.author}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </div>

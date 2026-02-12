@@ -29,11 +29,11 @@ const ProductsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Our Products</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6 text-foreground">
-            Precision-Engineered Railway & Bus Components
+            Precision-Engineered Bus Body & Railway Coach Components
           </h2>
           <p className="text-muted-foreground text-lg">
-            From locomotive parts to bus chassis, we manufacture a comprehensive range 
-            of components meeting RDSO specifications and international standards.
+                  From bus body parts to railway coach components, 
+             We manufacture components meeting various specifications and standards.
           </p>
         </div>
 

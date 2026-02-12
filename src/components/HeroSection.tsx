@@ -24,7 +24,7 @@ const HeroSection = () => {
             <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold leading-tight text-white">
               <span className="text-accent">Premium Quality</span>
               <br />
-              Railway & Bus
+              Bus Body & Railway Coach
               <br />
               Components
             </h1>

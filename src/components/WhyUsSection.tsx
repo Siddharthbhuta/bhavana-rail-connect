@@ -26,12 +26,12 @@ const WhyUsSection = () => {
         <div className="text-center max-w-3xl mx-auto mb-12">
           <span className="text-accent font-semibold text-sm uppercase tracking-wider">Why Choose Us</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold mt-4 mb-6 text-foreground">
-            Trusted by Railways & Bus Manufacturers
+            Trusted by Bus Body Manufacturers & Railway Coach Workshops  
           </h2>
           <p className="text-muted-foreground text-lg">
-            With over 31 years of experience in railway and bus component manufacturing,
+            With over 31 years of experience in bus body parts and railway coach components manufacturing,
             Bhavana Trading Co has established itself as a reliable partner for 
-            Indian Railways, bus manufacturers, and private operators.
+            bus body manufacturers, private operators, and indian railways.
           </p>
         </div>
 
