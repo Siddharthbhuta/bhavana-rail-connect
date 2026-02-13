@@ -22,7 +22,7 @@ const CTASection = () => {
                   Request Quote
                   <ArrowRight className="w-4 h-4" />
                 </Link>
-                <a href="tel:+918767333312" className="inline-flex items-center justify-center gap-2 px-6 py-3 text-sm font-semibold rounded-md border border-gray-300 text-gray-900 transition-all duration-300 hover:border-accent hover:text-accent">
+                <a href="tel:+918767333312" className="btn-accent">
                   <Phone className="w-4 h-4" />
                   Call Now
                 </a>
@@ -50,7 +50,6 @@ const CTASection = () => {
                 <div>
                   <h3 className="font-semibold text-primary mb-1">Email</h3>
                   <p className="text-gray-600">bhavana.trading@yahoo.com</p>
-                  <p className="text-gray-500 text-sm">Response within 24 hours</p>
                 </div>
               </div>
 

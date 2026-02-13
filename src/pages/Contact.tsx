@@ -71,7 +71,6 @@ const Contact = () => {
                   >
                     bhavana.trading@yahoo.com
                   </a>
-                  <p className="mt-2 text-sm">Response within 24 hours</p>
                 </div>
               </div>
             </div>

@@ -181,25 +181,18 @@ const BusProducts = () => {
               <h3 className="font-display font-bold text-lg text-primary mb-2">
                 Ashok Leyland
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Comet, Dost, Champ, Commander
-              </p>
-            </div>
+               </div>
             <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
               <h3 className="font-display font-bold text-lg text-primary mb-2">
                 Tata Motors
               </h3>
-              <p className="text-muted-foreground text-sm">
-                ACE, Novus, Sumo, Winger
-              </p>
+              
             </div>
             <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
               <h3 className="font-display font-bold text-lg text-primary mb-2">
                 Volvo Eicher
               </h3>
-              <p className="text-muted-foreground text-sm">
-                B7R, B9, C95
-              </p>
+              
             </div>
             <div className="bg-background rounded-2xl p-6 shadow-sm text-center">
               <h3 className="font-display font-bold text-lg text-primary mb-2">

@@ -35,7 +35,7 @@ const Footer = () => {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <Link to="/" className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
+              <img src={logo} alt="Bhavana Trading Co" className="h-14 w-auto object-contain" />
               <div>
                 <h3 className="font-display font-bold text-white leading-tight uppercase whitespace-nowrap">
                   <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>

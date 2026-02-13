@@ -56,7 +56,7 @@ const Header = () => {
         <div className="container-custom flex items-center justify-between h-20">
           {/* Logo - no background wrapper */}
           <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Bhavana Trading Co" className="h-12 w-auto object-contain" />
+            <img src={logo} alt="Bhavana Trading Co" className="h-14 w-auto object-contain" />
             <div>
               <h1 className="font-display font-bold text-foreground leading-tight uppercase whitespace-nowrap">
                 <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>
