@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import heroRailway from '@/assets/hero-railway.jpg';
+import heroRailway from '@/assets/train-products.png';
 
 const trainCategories = [
   {
