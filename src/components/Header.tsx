@@ -40,7 +40,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Bar - Dark Teal Background */}
       <div className="bg-primary py-2">
-        <div className="container-custom flex items-center justify-between text-sm">
+        <div className="container-custom flex items-center justify-between text-sm gap-4">
           <a href="mailto:bhavana.trading@yahoo.com" className="flex items-center gap-2 text-primary-foreground hover:opacity-80 transition-opacity">
             <Mail className="w-4 h-4" />
             <span className="hidden sm:inline">bhavana.trading@yahoo.com</span>
@@ -53,16 +53,16 @@ const Header = () => {
 
       {/* Main Navigation - White background */}
       <nav className="bg-white border-b border-border">
-        <div className="container-custom flex items-center justify-between h-20">
+        <div className="container-custom flex items-center justify-between h-16 sm:h-20 gap-3">
           {/* Logo - no background wrapper */}
-          <Link to="/" className="flex items-center gap-3">
-            <img src={logo} alt="Bhavana Trading Co" className="h-14 w-auto object-contain" />
-            <div>
-              <h1 className="font-display font-bold text-foreground leading-tight uppercase whitespace-nowrap">
-                <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>
-                <span className="text-sm md:text-base tracking-[0.2em] ml-2">TRADING CO.</span>
+          <Link to="/" className="flex items-center gap-2 sm:gap-3 min-w-0">
+            <img src={logo} alt="Bhavana Trading Co" className="h-10 sm:h-14 w-auto object-contain" />
+            <div className="min-w-0">
+              <h1 className="font-display font-bold text-foreground leading-tight uppercase">
+                <span className="text-lg sm:text-xl md:text-2xl tracking-wide">BHAVANA</span>
+                <span className="text-[10px] sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] ml-1 sm:ml-2">TRADING CO.</span>
               </h1>
-              <p className="text-[11px] md:text-xs leading-tight text-muted-foreground max-w-[17rem]">
+              <p className="hidden sm:block text-[11px] md:text-xs leading-tight text-muted-foreground max-w-[17rem]">
                 Bus Body and Railway Coach Components
               </p>
             </div>

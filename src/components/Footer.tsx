@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+﻿import { Link } from 'react-router-dom';
 import { Facebook, Linkedin, Twitter, Instagram, Mail, Phone, MapPin } from 'lucide-react';
 import logo from '@/assets/logo.png';
 
@@ -34,12 +34,12 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-12">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <Link to="/" className="flex items-center gap-3 mb-6">
-              <img src={logo} alt="Bhavana Trading Co" className="h-14 w-auto object-contain" />
+            <Link to="/" className="flex items-start sm:items-center gap-2 sm:gap-3 mb-6">
+              <img src={logo} alt="Bhavana Trading Co" className="h-10 sm:h-14 w-auto object-contain" />
               <div>
-                <h3 className="font-display font-bold text-white leading-tight uppercase whitespace-nowrap">
-                  <span className="text-xl md:text-2xl tracking-wide">BHAVANA</span>
-                  <span className="text-sm md:text-base tracking-[0.2em] ml-2">TRADING CO.</span>
+                <h3 className="font-display font-bold text-white leading-tight uppercase">
+                  <span className="text-lg sm:text-xl md:text-2xl tracking-wide">BHAVANA</span>
+                  <span className="text-[10px] sm:text-sm md:text-base tracking-[0.15em] sm:tracking-[0.2em] ml-1 sm:ml-2">TRADING CO.</span>
                 </h3>
                 <p className="text-[11px] md:text-xs leading-tight text-accent max-w-[17rem]">
                   Bus Body and Railway Coach Components
@@ -101,13 +101,13 @@ const Footer = () => {
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
                 <span className="text-primary-foreground/80 text-sm">
-                  <span className="block whitespace-nowrap">Rakesh Mehta- 8767333312 / 9821295540</span>
-                  <span className="block whitespace-nowrap">Vipul Mehta- 9821502275 / 8080502275</span>
+                  <span className="block">Rakesh Mehta- 8767333312 / 9821295540</span>
+                  <span className="block">Vipul Mehta- 9821502275 / 8080502275</span>
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">bhavana.trading@yahoo.com</span>
+                <span className="text-primary-foreground/80 text-sm break-all">bhavana.trading@yahoo.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
@@ -127,7 +127,7 @@ const Footer = () => {
       <div className="border-t border-white/10">
         <div className="container-custom py-6 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm text-primary-foreground/70">
-            © {currentYear} Bhavana Trading Co. All rights reserved.
+            (c) {currentYear} Bhavana Trading Co. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link to="/privacy" className="text-sm text-primary-foreground/70 hover:text-accent transition-colors">
@@ -144,3 +144,4 @@ const Footer = () => {
 };
 
 export default Footer;
+
