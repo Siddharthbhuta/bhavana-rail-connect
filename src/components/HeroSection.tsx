@@ -38,13 +38,13 @@ const HeroSection = () => {
 
           </div>
 
-          <div className="hidden lg:flex justify-end pointer-events-none relative">
+          <div className="flex justify-center lg:justify-end pointer-events-none relative mt-2 lg:mt-0">
             <img
               src={heroImage}
               alt="Bus blueprint"
-              className="w-[150%] max-w-none h-auto object-contain opacity-80 -mr-52"
+              className="w-[115%] sm:w-full lg:w-[150%] max-w-[560px] lg:max-w-none h-auto object-contain opacity-55 sm:opacity-70 lg:opacity-80 translate-y-2 lg:translate-y-0 lg:-mr-52"
             />
-            <div className="absolute bottom-0 right-0 w-24 h-24 bg-primary rounded-tl-full" />
+            <div className="hidden lg:block absolute bottom-0 right-0 w-24 h-24 bg-primary rounded-tl-full" />
           </div>
         </div>
       </div>
@@ -53,3 +53,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
