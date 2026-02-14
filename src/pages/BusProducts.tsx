@@ -198,9 +198,6 @@ const BusProducts = () => {
               <h3 className="font-display font-bold text-lg text-primary mb-2">
                 Other Brands
               </h3>
-              <p className="text-muted-foreground text-sm">
-                Mahindra, Isuzu, MAN, Scania
-              </p>
             </div>
           </div>
         </div>

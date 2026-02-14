@@ -5,15 +5,19 @@ import heroImage from '@/assets/bus-hero-background.jpeg';
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden bg-primary">
-      {/* Background */}
-      <div className="absolute inset-0 z-0">
+      {/* Right-side background bus image */}
+      <div className="absolute inset-y-0 right-0 w-full lg:w-[58%] z-0 pointer-events-none">
         <img
           src={heroImage}
-          alt="Railway components manufacturing"
-          className="w-full h-full object-cover opacity-40"
+          alt="Bus blueprint background"
+          className="w-full h-full object-contain object-center lg:object-right opacity-30"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/75 to-primary/60" />
-        <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
+      </div>
+      <div className="absolute inset-0 z-0 bg-gradient-to-r from-primary via-primary/90 to-primary/60" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
+      <div className="absolute inset-y-0 left-0 w-full lg:w-[52%] z-0 bg-gradient-to-r from-primary/85 via-primary/70 to-transparent" />
+      <div className="absolute inset-0 z-0">
+        <div className="w-full h-full bg-[radial-gradient(circle_at_left_top,rgba(255,255,255,0.06),transparent_45%)]" />
       </div>
 
       {/* Content */}
