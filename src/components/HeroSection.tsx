@@ -1,6 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import heroImage from '@/assets/bus-hero-final.png';
+import heroImage from '@/assets/bus-hero-final1.png';
 
 const HeroSection = () => {
   return (
@@ -38,12 +38,13 @@ const HeroSection = () => {
 
           </div>
 
-          <div className="hidden lg:flex justify-end pointer-events-none">
+          <div className="hidden lg:flex justify-end pointer-events-none relative">
             <img
               src={heroImage}
               alt="Bus blueprint"
               className="w-[132%] max-w-none h-auto object-contain opacity-80 -mr-16"
             />
+            <div className="absolute bottom-0 right-0 w-24 h-24 bg-primary rounded-tl-full" />
           </div>
         </div>
       </div>
