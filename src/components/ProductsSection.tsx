@@ -1,7 +1,7 @@
-import { ArrowRight, Bus, Train, Package } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import busProducts from '@/assets/bus-products.jpg';
-import trainProducts from '@/assets/train-products.png';
+import trainProducts from '@/assets/RAILWAY-PHOTO.jpg';
 
 const busCategories = [
   'Body Panels and Doors',
@@ -37,9 +37,9 @@ const ProductsSection = () => {
           </p>
         </div>
 
-        {/* Products Grid - Three Column Layout */}
-        <div className="max-w-5xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8">
+        {/* Products Grid */}
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-10">
             {/* Bus Components Box */}
             <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
               <div className="border-t-4 border-t-accent" />
@@ -47,7 +47,7 @@ const ProductsSection = () => {
                 <img
                   src={busProducts}
                   alt="Bus Components"
-                  className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="mt-4 flex items-center gap-2">
                   <h3 className="font-display font-bold text-xl text-foreground">
@@ -79,7 +79,7 @@ const ProductsSection = () => {
                 <img
                   src={trainProducts}
                   alt="Train Components"
-                  className="w-full h-48 object-contain transition-transform duration-500 group-hover:scale-105"
+                  className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="mt-4 flex items-center gap-2">
                   <h3 className="font-display font-bold text-xl text-foreground">
@@ -104,32 +104,6 @@ const ProductsSection = () => {
               </div>
             </div>
 
-            {/* Other Products Box */}
-            <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-              <div className="border-t-4 border-t-accent" />
-              <Link to="/products/other" className="block p-6 bg-card">
-                <div className="w-full h-48 flex items-center justify-center bg-muted/30 rounded-lg">
-                  <Package className="w-20 h-20 text-primary/50 transition-transform duration-500 group-hover:scale-110" />
-                </div>
-                <div className="mt-4 flex items-center gap-2">
-                  <h3 className="font-display font-bold text-xl text-foreground">
-                    Other Products
-                  </h3>
-                </div>
-              </Link>
-              <div className="p-4 bg-muted/50">
-                <p className="text-sm text-muted-foreground mb-3">
-                  Steering, door systems, safety equipment, and more.
-                </p>
-                <Link
-                  to="/products/other"
-                  className="text-sm font-medium text-accent hover:underline inline-flex items-center gap-1"
-                >
-                  View all other products
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* CTA */}

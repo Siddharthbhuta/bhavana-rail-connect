@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
-import { Train, Bus, Package, Users, Building2, Award } from 'lucide-react';
+import { Train, Bus, Users, Building2, Award } from 'lucide-react';
 import busProducts from '@/assets/bus-products.jpg';
-import trainProducts from '@/assets/train-products.png';
+import trainProducts from '@/assets/RAILWAY-PHOTO.jpg';
 
 interface MegaMenuProps {
   type: string;
@@ -43,11 +43,11 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
         onMouseLeave={onMenuLeave}
       >
         <div className="bg-card border-b border-border shadow-2xl">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Bus Components Box */}
               <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-                <Link to="/products/bus" onClick={onClose} className="block relative h-40 overflow-hidden">
+                <Link to="/products/bus" onClick={onClose} className="block relative h-52 overflow-hidden">
                   <img
                     src={busProducts}
                     alt="Bus Components"
@@ -83,7 +83,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
 
               {/* Train Components Box */}
               <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-                <Link to="/products/train" onClick={onClose} className="block relative h-40 overflow-hidden">
+                <Link to="/products/train" onClick={onClose} className="block relative h-52 overflow-hidden">
                   <img
                     src={trainProducts}
                     alt="Train Components"
@@ -117,35 +117,6 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                 </div>
               </div>
 
-              {/* Other Products Box */}
-              <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
-                <Link to="/products/other" onClick={onClose} className="block relative h-40 overflow-hidden bg-primary/10">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <Package className="w-16 h-16 text-primary/60 group-hover:scale-110 transition-transform duration-500" />
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent" />
-                  <div className="absolute bottom-3 left-4 flex items-center gap-2">
-                    <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                      <Package className="w-5 h-5 text-accent-foreground" />
-                    </div>
-                    <h3 className="font-display font-bold text-lg text-foreground">
-                      Other Products
-                    </h3>
-                  </div>
-                </Link>
-                <div className="p-4 bg-muted/50">
-                  <p className="text-sm text-muted-foreground mb-3">
-                    Steering, door systems, safety equipment, and more.
-                  </p>
-                  <Link
-                    to="/products/other"
-                    onClick={onClose}
-                    className="text-sm font-medium text-accent hover:underline inline-flex items-center gap-1"
-                  >
-                    View all other products
-                  </Link>
-                </div>
-              </div>
             </div>
 
             <div className="mt-6 pt-4 border-t border-border text-center">

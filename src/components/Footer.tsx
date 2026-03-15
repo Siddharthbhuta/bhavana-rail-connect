@@ -9,7 +9,6 @@ const Footer = () => {
     products: [
       { name: 'Bus Components', href: '/products/bus' },
       { name: 'Railway Components', href: '/products/train' },
-      { name: 'Other Products', href: '/products' },
       { name: 'All Products', href: '/products' },
     ],
     company: [
