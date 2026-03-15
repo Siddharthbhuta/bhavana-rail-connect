@@ -223,6 +223,15 @@ const busProductSubCategories = [
     ],
   },
   {
+    title: 'Door Locks',
+    products: [
+      {
+        name: 'Driver Door Lock Ashok Leyland',
+        image: '/products/bus products/driver-door-lock-ashok-leyland.png',
+      },
+    ],
+  },
+  {
     title: 'USB Charger',
     products: [
       {
