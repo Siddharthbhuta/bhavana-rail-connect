@@ -4,12 +4,12 @@ import busProducts from '@/assets/bus-products.jpg';
 import trainProducts from '@/assets/RAILWAY-PHOTO.jpg';
 
 const busCategories = [
-  'Body Panels and Doors',
-  'Doors and Windows',
-  'Roof Components',
-  'Seating Systems',
-  'Interior Fixtures',
-  'Additional Components',
+  'ARAI- ICAT APPROVED COMPONENTS.',
+  'SLEEPER COACH COMPONENTS.',
+  'SEAT PARTS & ASCESSARIES.',
+  'SHOCKUP SIR & GAS SPRINGS.',
+  'BUS BODY COMPONENTS',
+  'SOCKETS & HANDLES.',
 ];
 
 const trainCategories = [

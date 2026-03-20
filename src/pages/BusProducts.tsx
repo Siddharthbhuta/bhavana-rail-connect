@@ -1,40 +1,39 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Bus, CheckCircle, Cog, Microscope, X } from 'lucide-react';
+import { Bus, CheckCircle, Cog, Microscope } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import productBus from '@/assets/product-bus.jpg';
 
 const busCategories = [
   {
-    name: 'Body Panels and Doors',
-    slug: 'body-panels-and-doors',
-    description: 'High-quality exterior body panels and door assemblies for buses',
+    name: 'ARAI- ICAT APPROVED COMPONENTS.',
+    slug: 'arai-icat-approved-components',
+    description: 'Components approved by ARAI and ICAT meeting all regulatory standards',
   },
   {
-    name: 'Doors and Windows',
-    slug: 'doors-and-windows',
-    description: 'Durable door systems and window components for passenger comfort',
+    name: 'SLEEPER COACH COMPONENTS.',
+    slug: 'sleeper-coach-components',
+    description: 'High-quality components designed for sleeper coach configurations',
   },
   {
-    name: 'Roof Components',
-    slug: 'roof-components',
-    description: 'Roof panels, hatches, and ventilation systems',
+    name: 'SEAT PARTS & ASCESSARIES.',
+    slug: 'seat-parts-and-ascessaries',
+    description: 'Comprehensive seat parts and accessories for passenger comfort',
   },
   {
-    name: 'Seating Systems',
-    slug: 'seating-systems',
-    description: 'Ergonomic passenger and driver seating solutions',
+    name: 'SHOCKUP SIR & GAS SPRINGS.',
+    slug: 'shockup-sir-and-gas-springs',
+    description: 'Shock absorbers, air suspension, and gas spring components',
   },
   {
-    name: 'Interior Fixtures',
-    slug: 'interior-fixtures',
-    description: 'Grab rails, luggage racks, and interior fittings',
+    name: 'BUS BODY COMPONENTS',
+    slug: 'bus-body-components',
+    description: 'Complete range of structural and exterior bus body components',
   },
   {
-    name: 'Additional Components',
-    slug: 'additional-components',
-    description: 'Bumpers, guard rails, mudguards, fenders, step assemblies, weather strips, and custom parts',
+    name: 'SOCKETS & HANDLES.',
+    slug: 'sockets-and-handles',
+    description: 'Electrical sockets, grab handles and related fittings',
   },
 ];
 
@@ -89,172 +88,9 @@ const qualitySpecs = [
   },
 ];
 
-const busProductSubCategories = [
-  {
-    title: 'Hinges',
-    products: [
-      {
-        name: 'Door SS Hinges',
-        image: '/products/bus products/door-ss-hinges.png',
-      },
-      {
-        name: 'Door Hinges Forgin',
-        image: '/products/bus products/door-hinges-forgin.png',
-      },
-      {
-        name: 'Bus Hinges Without Handle',
-        image: '/products/bus products/bus-hinges-without-handle.png',
-      },
-      {
-        name: 'Bus Hinges With Handles',
-        image: '/products/bus products/bus-hinges-with-handles.png',
-      },
-    ],
-  },
-  {
-    title: 'Lamp, Indicator and LED',
-    products: [
-      {
-        name: 'Step Lamp Assembly 6 LED 12/24V',
-        image: '/products/bus products/step-lamp-assembly-6-led-12-24v.png',
-      },
-      {
-        name: 'Side Markerlamp 3 LED Assembly',
-        image: '/products/bus products/side-markerlamp-3-led-assembly.png',
-      },
-      {
-        name: 'Side Marker With RR',
-        image: '/products/bus products/side-marker-with-rr.png',
-      },
-      {
-        name: 'Roof Lamp Assembly',
-        image: '/products/bus products/roof-lamp-assembly.png',
-      },
-      {
-        name: 'Reflex Reflector',
-        image: '/products/bus products/reflex-reflector.png',
-      },
-      {
-        name: 'Rear Height Marker Lamp Assembly',
-        image: '/products/bus products/rear-height-marker-lamp-assembly.png',
-      },
-      {
-        name: 'Number Plate Lamp Assembly',
-        image: '/products/bus products/number-plate-lamp-assembly.png',
-      },
-      {
-        name: 'LED Tail Lamp 12/24V',
-        image: '/products/bus products/led-tail-lamp-12-24v.png',
-      },
-      {
-        name: 'LED Reverse Lamp 12/24V',
-        image: '/products/bus products/led-reverse-lamp-12-24v.png',
-      },
-      {
-        name: 'LED Number Plate',
-        image: '/products/bus products/led-number-plate.png',
-      },
-      {
-        name: 'LED Direction Indicator',
-        image: '/products/bus products/led-direction-indicator.png',
-      },
-      {
-        name: 'Hooter Flasher Assembly 12/24V',
-        image: '/products/bus products/hooter-flasher-assembly-12-24v.png',
-      },
-      {
-        name: 'Front Height Marker Lamp',
-        image: '/products/bus products/front-height-marker-lamp.png',
-      },
-      {
-        name: 'Direction Indiacator Assembly',
-        image: '/products/bus products/direction-indiacator-assembly.png',
-      },
-    ],
-  },
-  {
-    title: 'Mirror',
-    products: [
-      {
-        name: 'Volvo Type Mirror Bracket Assembly',
-        image: '/products/bus products/volvo-type-mirror-bracket-assembly.png',
-      },
-      {
-        name: 'Mirror With Bracket',
-        image: '/products/bus products/mirror-with-bracket.png',
-      },
-      {
-        name: 'Mirror Front Proximity',
-        image: '/products/bus products/mirror-front-proximity.png',
-      },
-      {
-        name: 'Mirror Bracket RH',
-        image: '/products/bus products/mirror-bracket-rh.png',
-      },
-      {
-        name: 'Mirror Bracket LH',
-        image: '/products/bus products/mirror-bracket-lh.png',
-      },
-      {
-        name: 'Marcopolo Mirror With Bracket',
-        image: '/products/bus products/marcopolo-mirror-with-bracket.png',
-      },
-    ],
-  },
-  {
-    title: 'Roof',
-    products: [
-      {
-        name: 'Roof Escape Hatch',
-        image: '/products/bus products/roof-escape-hatch.png',
-      },
-      {
-        name: 'Roof Escape Hatch With Fan Light',
-        image: '/products/bus products/roof-escape-hatch-with-fan-light.png',
-      },
-      {
-        name: 'Roof Escape Hatch 970 x 535',
-        image: '/products/bus products/roof-escape-hatch-970-x-535.png',
-      },
-      {
-        name: 'Bus Sunvisor 2ft 3ft',
-        image: '/products/bus products/bus-sunvisor-2ft-3ft.png',
-      },
-    ],
-  },
-  {
-    title: 'Door Locks',
-    products: [
-      {
-        name: 'Driver Door Lock Ashok Leyland',
-        image: '/products/bus products/driver-door-lock-ashok-leyland.png',
-      },
-    ],
-  },
-  {
-    title: 'USB Charger',
-    products: [
-      {
-        name: 'USB Charger 2 Port Round',
-        image: '/products/bus products/usb-charger-2-port-round.png',
-      },
-    ],
-  },
-];
+
 
 const BusProducts = () => {
-  const [selectedProduct, setSelectedProduct] = useState<{ name: string; image: string } | null>(null);
-
-  useEffect(() => {
-    const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') {
-        setSelectedProduct(null);
-      }
-    };
-
-    window.addEventListener('keydown', onKeyDown);
-    return () => window.removeEventListener('keydown', onKeyDown);
-  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -334,55 +170,7 @@ const BusProducts = () => {
         </div>
       </section>
 
-      {/* Product Subcategories Section */}
-      <section className="py-12 md:py-16 bg-muted/20">
-        <div className="container-custom">
-          <h2 className="font-display font-bold text-3xl text-primary mb-4">
-            Products
-          </h2>
-          <p className="text-muted-foreground mb-10 max-w-2xl">
-            Explore bus body products grouped by subcategories.
-          </p>
 
-          <div className="space-y-12">
-            {busProductSubCategories.map((subcategory) => (
-              <div key={subcategory.title}>
-                <h3 className="font-display font-bold text-2xl text-foreground mb-6">
-                  {subcategory.title}
-                </h3>
-                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                  {subcategory.products.map((product) => (
-                    <button
-                      type="button"
-                      key={product.image}
-                      onClick={() => setSelectedProduct(product)}
-                      className="group bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/50"
-                    >
-                      <div className="h-44 bg-muted/40 overflow-hidden">
-                        <img
-                          src={product.image}
-                          alt={product.name}
-                          className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
-                          onError={(e) => {
-                            const el = e.target as HTMLImageElement;
-                            el.src = '/placeholder.svg';
-                            el.onerror = null;
-                          }}
-                        />
-                      </div>
-                      <div className="p-4">
-                        <h4 className="font-display font-semibold text-sm text-foreground leading-snug">
-                          {product.name}
-                        </h4>
-                      </div>
-                    </button>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Compatible Bus Models Section */}
       <section className="py-12 md:py-16 bg-muted/30">
@@ -493,44 +281,7 @@ const BusProducts = () => {
         </div>
       </section>
 
-      {selectedProduct && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/80 p-4 md:p-8 flex items-center justify-center"
-          onClick={() => setSelectedProduct(null)}
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedProduct.name}
-        >
-          <div
-            className="relative w-full max-w-6xl max-h-[90vh] rounded-2xl bg-background p-3 md:p-5"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button
-              type="button"
-              onClick={() => setSelectedProduct(null)}
-              className="absolute top-3 right-3 z-10 rounded-full bg-background/90 p-2 border border-border hover:bg-muted transition-colors"
-              aria-label="Close image preview"
-            >
-              <X className="w-5 h-5 text-foreground" />
-            </button>
-            <div className="h-[65vh] md:h-[75vh] w-full bg-muted/20 rounded-xl overflow-hidden flex items-center justify-center">
-              <img
-                src={selectedProduct.image}
-                alt={selectedProduct.name}
-                className="max-h-full max-w-full object-contain"
-                onError={(e) => {
-                  const el = e.target as HTMLImageElement;
-                  el.src = '/placeholder.svg';
-                  el.onerror = null;
-                }}
-              />
-            </div>
-            <p className="font-display font-semibold text-base md:text-lg text-foreground mt-4 px-1">
-              {selectedProduct.name}
-            </p>
-          </div>
-        </div>
-      )}
+
 
       <Footer />
     </div>
