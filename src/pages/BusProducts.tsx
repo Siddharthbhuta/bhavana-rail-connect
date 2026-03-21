@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState, useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { Bus, CheckCircle, Cog, Microscope, X } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -168,8 +168,107 @@ const shockupGasSpringsProducts = [
   { name: 'Seat Gas Spring', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016084/seat-gas-spring_v88gat.png' },
 ];
 
+const busBodyComponentsProducts = [
+  { name: 'Budget Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069401/budget-lock_hvssmv.png' },
+  { name: 'Diesel Tank Cover New', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069468/diesel-tank-cover-new_eohzhn.png' },
+  { name: 'Door Latch', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069524/door-latch_hhzzic.png' },
+  { name: 'PVC Dicky Handle 18in', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069525/pvc-dicky-handle-18in_aznycy.png' },
+  { name: 'Brass Double Turn Horn Assembly', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069525/brass-double-turn-horn-assembly_vkwov2.png' },
+  { name: 'Double Side Self Adhesive Bitumen Tape Roll', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069526/double-side-self-adhesive-bitumen-tape-roll_ch7hzb.png' },
+  { name: 'Rubber Horn Bulb', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069526/rubber-horn-bulb_ddqhws.png' },
+  { name: 'Document Holder', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069528/document-holder_sffheg.png' },
+  { name: 'PVC Food Rest Driver Or Emergency', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069528/pvc-food-rest-driver-or-emergency_oyzj1y.png' },
+  { name: 'Window Lock ACGL', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069529/window-lock-acgl_krctqj.png' },
+  { name: 'Budget Lock Cap', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069529/budjet-lock-cap_djjgyk.png' },
+  { name: 'Diesel Tank Cover', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069531/diesel-tank-cover_tcewk3.png' },
+  { name: 'Window Lock Marcopolo', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069533/window-lock-marcopolo_rjx3tg.png' },
+  { name: 'Dicky Handle With Indicator Complete Assembly', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069532/dicky-handle-with-inicator-complete-assembly_tsduq8.png' },
+  { name: 'Window Lock ABS Big', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069535/window-lock-abs-big_txez7n.png' },
+  { name: 'Push Button Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069536/push-button-lock_hz9ifq.png' },
+  { name: 'Oval Indicator Handle Locking', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069536/oval-indicator-handle-locking_vgnotp.png' },
+  { name: 'MS Canopy Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069537/ms-canopy-lock_vdgdjb.png' },
+  { name: 'Flap Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069538/flap-lock_nj1alp.png' },
+  { name: 'Side Dicky Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069538/side-dicky-handle_gk5s6f.png' },
+  { name: 'JK Door Locking Handle Assembly', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069539/jk-door-locking-handle-assembly_ploz4c.png' },
+  { name: 'SS Canopy Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069540/ss-canopy-lock_oq6hzb.png' },
+  { name: 'Cabin Handle 6-8-10in', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069540/cabin-handle-6-8-10in_ilp1ze.png' },
+  { name: 'Window Lock MS Sumo', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069542/window-lock-ms-sumo_abfaty.png' },
+  { name: 'First Aid Box', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069543/first-aid-box_dslsqk.png' },
+  { name: 'Forging Hinges Small', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069544/forgin-hinges-small_xk6vad.png' },
+  { name: 'Forging Hinges Big', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069545/forgin-hinges-big_wha3pv.png' },
+  { name: 'Single Leaf Hinges Big', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069547/single-leaf-hinges-big_sey00l.png' },
+  { name: 'Single Leaf Hinges Small', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069548/single-leaf-hinges-small_lrz99c.png' },
+  { name: 'Striker Plate MS', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069550/stiker-plate-ms_aafztn.png' },
+  { name: 'Striker Plate Brass', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069549/stiker-plate-brass_fs1efv.png' },
+  { name: 'Single Leaf Hinges Alu Section', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069552/single-leaf-hinges-alu-section_dyn6us.png' },
+  { name: 'Pin Type Hinges', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069553/pin-type-hinges_drnxup.png' },
+  { name: 'Roof Grab Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069552/roof-grab-handle_lme1my.png' },
+  { name: 'Retro Reflective Tape', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069553/rectro-reflective-tape_j3esoy.png' },
+  { name: 'Mirror Bracket', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069556/mirror-bracket_eanb9h.png' },
+  { name: 'Hinges Emergency Door', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069559/hinges-emergency-door_u8ps07.png' },
+  { name: 'Mirror Bracket Marcopolo LH', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069557/mirror-bracket-marcopolo-lh_nn5alz.png' },
+  { name: 'Mirror Bracket Marcopolo RH', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069554/mirror-bracket-marcopolo-rh_wktgar.png' },
+  { name: 'PU Windscreen Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069559/pu-windscreen-handle_buhphu.png' },
+  { name: 'Forging Hinges Round', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069557/forgin-hinges-round_ucjeat.png' },
+  { name: 'Driver Door Lock Leyland', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069557/driver-door-lock-leyland_no8rwd.png' },
+  { name: 'Volvo Side Flap Door Latch', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069560/volvo-side-flap-door-latch_qs1xgi.png' },
+  { name: 'Container Door Hinges', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069555/container-door-hinges_qxspip.png' },
+  { name: 'Striker Plate Volvo', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069562/stiker-plate-volvo_phcel6.png' },
+  { name: 'Volvo Dicky Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069562/volvo-dicky-handle_utfggj.png' },
+  { name: 'Driver Door Handle Tata', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069566/driver-door-handle-tata_nbhduu.png' },
+  { name: 'AC Blower Single', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069564/ac-blower-single_ibatdr.png' },
+  { name: 'Door Safety Latch 3', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069565/door-safety-latch-3_lijpc0.png' },
+  { name: 'JK Door Brush', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069566/jk-door-brush_kretxb.png' },
+  { name: 'Tower Bolt 6-8-10in', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069564/tower-bolt-6-8-10in_uf8pfd.png' },
+  { name: 'Volvo Reading Light', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069573/volvo-reading-light_hq4ssf.png' },
+  { name: 'RC Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069566/r-c-lock_x9pusu.png' },
+  { name: 'Window Lock MS', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069570/window-lock-ms_zxjzxq.png' },
+  { name: 'Window Lock SM', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069572/window-lock-sm_wfe5zf.png' },
+  { name: 'Budget Lock Key', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069572/budget-lock-key_wbbtpj.png' },
+  { name: 'Window Lock PVS Sumo', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069573/window_lock_pvs_sumo_zl9ylj.png' },
+  { name: 'Aluminium Handle Disc', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069576/aluminium-handle-disc_wzauxb.png' },
+  { name: 'Door Safety Latch 2', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069574/door-safety-latch-2_txarr3.png' },
+  { name: 'Striker Plate', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069576/stiker-plate_wr46o7.png' },
+  { name: 'Window Lock Butterfly', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069569/window-lock-butterfly_v7jv4d.png' },
+  { name: 'Alu & PVC Three Groove Dovetail', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069574/alu-_-pvc-three-grove-dowtail_ybtzjs.png' },
+  { name: 'Bus Bell', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069570/bus-bell_hdjejw.png' },
+  { name: 'Door Safety Latch', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069578/door-safety-latch_nynbce.png' },
+  { name: 'Heavy Duty Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069580/heavy-duty-lock_xdtoqu.png' },
+  { name: 'Lorry Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069581/lorry-lock_eqqgma.png' },
+];
+
+const socketsHandlesProducts = [
+  { name: 'Horizontal Square Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073693/horizontal-square-socket-open_rfndpg.png' },
+  { name: 'Roof Grab Handle Diff', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073652/roof-grab-handle-diff_wl8wwd.png' },
+  { name: 'Roof Grab Handle Grey', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073648/roof-grab-handle-grey_miyczp.png' },
+  { name: 'Horizontal Square Socket Close', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073647/horizontal-square-socket-close_kwxpao.png' },
+  { name: 'Roof Grab Handle Marcopolo', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073644/roof-grab-handle-marcopolo_i6zpum.png' },
+  { name: 'Roof Grab Handle Triangular', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073640/roof-grab-handle-triangular_ixzdrv.png' },
+  { name: 'Horizontal Round Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073640/horizontal-round-socket-open_amqh8b.png' },
+  { name: 'Horizontal Round Socket Close', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073639/horizontal-round-socket-close_shdg68.png' },
+  { name: 'Roof Grab Handle Revolving Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073638/roof-grab-handle-revolving-type_wqxjms.png' },
+  { name: 'Driver Door Plain Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073637/driver-door-plain-handle_spzq3j.png' },
+  { name: 'Driver Door Locking Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073636/driver-door-locking-handle_tqtknu.png' },
+  { name: 'Driver Door Inner Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073633/driver-door-inner-handle_w5jerd.png' },
+  { name: 'Alu T-Socket 2-Hole', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073631/alu-t-socket-2-hole_r7qqai.png' },
+  { name: 'Alu T-Socket 4-Hole', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073631/alu-t-socket-4-hole_c0begt.png' },
+  { name: 'Window Guardrail Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073629/window-guardrial-socket-open_trpe2n.png' },
+  { name: 'Window Guardrail Socket Closed', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073630/window-guardrial-socket-closed_ht2yqq.png' },
+];
+
 const BusProducts = () => {
+  const { category: categorySlug } = useParams();
   const [selectedProduct, setSelectedProduct] = useState<{ name: string; image: string } | null>(null);
+
+  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  useEffect(() => {
+    if (categorySlug && sectionsRef.current[categorySlug]) {
+      setTimeout(() => {
+        sectionsRef.current[categorySlug]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [categorySlug]);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
@@ -182,6 +281,8 @@ const BusProducts = () => {
   const [showAllAraiIcat, setShowAllAraiIcat] = useState(false);
   const [showAllSeatParts, setShowAllSeatParts] = useState(false);
   const [showAllShockupGasSprings, setShowAllShockupGasSprings] = useState(false);
+  const [showAllBusBodyComponents, setShowAllBusBodyComponents] = useState(false);
+  const [showAllSocketsHandles, setShowAllSocketsHandles] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -262,7 +363,11 @@ const BusProducts = () => {
       </section>
 
       {/* ARAI-ICAT Products Section */}
-      <section className="py-12 md:py-16 bg-muted/20">
+      <section 
+        id="arai-icat-approved-components" 
+        ref={(el) => (sectionsRef.current['arai-icat-approved-components'] = el)}
+        className="py-12 md:py-16 bg-muted/20"
+      >
         <div className="container-custom">
           <div className="mb-8">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
@@ -314,7 +419,11 @@ const BusProducts = () => {
       </section>
 
       {/* Sleeper Coach Products Section */}
-      <section className="py-12 md:py-16 bg-background">
+      <section 
+        id="sleeper-coach-components" 
+        ref={(el) => (sectionsRef.current['sleeper-coach-components'] = el)}
+        className="py-12 md:py-16 bg-background"
+      >
         <div className="container-custom">
           <div className="mb-8">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
@@ -357,7 +466,11 @@ const BusProducts = () => {
       </section>
 
       {/* Seat Parts Products Section */}
-      <section className="py-12 md:py-16 bg-muted/20">
+      <section 
+        id="seat-parts-and-ascessaries" 
+        ref={(el) => (sectionsRef.current['seat-parts-and-ascessaries'] = el)}
+        className="py-12 md:py-16 bg-muted/20"
+      >
         <div className="container-custom">
           <div className="mb-8">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
@@ -411,7 +524,11 @@ const BusProducts = () => {
       </section>
 
       {/* Shockup Sir & Gas Springs Section */}
-      <section className="py-12 md:py-16 bg-background">
+      <section 
+        id="shockup-sir-and-gas-springs" 
+        ref={(el) => (sectionsRef.current['shockup-sir-and-gas-springs'] = el)}
+        className="py-12 md:py-16 bg-background"
+      >
         <div className="container-custom">
           <div className="mb-8">
             <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
@@ -458,6 +575,122 @@ const BusProducts = () => {
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllShockupGasSprings ? 'Show Less' : `View All Products (${shockupGasSpringsProducts.length})`}
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Bus Body Components Section */}
+      <section 
+        id="bus-body-components" 
+        ref={(el) => (sectionsRef.current['bus-body-components'] = el)}
+        className="py-12 md:py-16 bg-muted/20"
+      >
+        <div className="container-custom">
+          <div className="mb-8">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
+            <h2 className="font-display font-bold text-3xl text-primary mt-2 mb-2">
+              Bus Body Components
+            </h2>
+            <p className="text-muted-foreground max-w-2xl">
+              Complete range of structural and exterior bus body components
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {(showAllBusBodyComponents ? busBodyComponentsProducts : busBodyComponentsProducts.slice(0, 4)).map((product) => (
+              <button
+                type="button"
+                key={product.image}
+                onClick={() => setSelectedProduct(product)}
+                className="group bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/50 text-left"
+              >
+                <div className="h-44 bg-muted/40 overflow-hidden flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement;
+                      el.src = '/placeholder.svg';
+                      el.onerror = null;
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-semibold text-sm text-foreground leading-snug">
+                    {product.name}
+                  </h4>
+                </div>
+              </button>
+            ))}
+          </div>
+          {busBodyComponentsProducts.length > 4 && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAllBusBodyComponents((prev) => !prev)}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
+              >
+                {showAllBusBodyComponents ? 'Show Less' : `View All Products (${busBodyComponentsProducts.length})`}
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Sockets and Handles Section */}
+      <section 
+        id="sockets-and-handles" 
+        ref={(el) => (sectionsRef.current['sockets-and-handles'] = el)}
+        className="py-12 md:py-16 bg-background"
+      >
+        <div className="container-custom">
+          <div className="mb-8">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Category</span>
+            <h2 className="font-display font-bold text-3xl text-primary mt-2 mb-2">
+              Sockets & Handles
+            </h2>
+            <p className="text-muted-foreground max-w-2xl">
+              Electrical sockets, grab handles and related fittings
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {(showAllSocketsHandles ? socketsHandlesProducts : socketsHandlesProducts.slice(0, 4)).map((product) => (
+              <button
+                type="button"
+                key={product.image}
+                onClick={() => setSelectedProduct(product)}
+                className="group bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/50 text-left"
+              >
+                <div className="h-44 bg-muted/40 overflow-hidden flex items-center justify-center">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="h-full w-full object-contain p-4 transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement;
+                      el.src = '/placeholder.svg';
+                      el.onerror = null;
+                    }}
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-display font-semibold text-sm text-foreground leading-snug">
+                    {product.name}
+                  </h4>
+                </div>
+              </button>
+            ))}
+          </div>
+          {socketsHandlesProducts.length > 4 && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAllSocketsHandles((prev) => !prev)}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
+              >
+                {showAllSocketsHandles ? 'Show Less' : `View All Products (${socketsHandlesProducts.length})`}
               </button>
             </div>
           )}

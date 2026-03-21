@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom';
-import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones } from 'lucide-react';
+import { useEffect, useState, useRef } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones, X } from 'lucide-react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import heroRailway from '@/assets/RAILWAY-PHOTO.jpg';
@@ -35,6 +36,22 @@ const trainCategories = [
     slug: 'miscellaneous-components',
     description: 'Springs and bolts, wear plates, fasteners, gaskets and seals',
   },
+];
+
+const railwayProducts = [
+  { name: 'PU Armpad Blue/Green', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077247/pu-armpad-blue-green_cjeaku.png' },
+  { name: 'PU Berth Safety Rail', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077233/pu-berth-safety-rail_fa2wwp.png' },
+  { name: 'Arm Rest LHB', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077228/arm-rest-lhb_tbqhp6.png' },
+  { name: 'Aluminium Snack Table', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077227/aluminium-snack-table_hy93fb.png' },
+  { name: 'Seat Levers LH/RH', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/seat-levers-lh-rh_qdc2jb.png' },
+  { name: 'Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/foot-rest_drrno4.png' },
+  { name: 'Aluminium Side Panel LHB', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077225/aluminium-side-panel-lhb_ll8mk4.png' },
+  { name: 'Seat Lever Small', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077222/seat-lever-small_gdhs0y.png' },
+  { name: 'Horizontal Square Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073693/horizontal-square-socket-open_rfndpg.png' },
+  { name: 'Seat Gas Spring TT', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016090/seat-gas-spring-tt_ysiyk1.png' },
+  { name: 'Seat Gas Spring', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016084/seat-gas-spring_v88gat.png' },
+  { name: 'Seat Gas Spring Korean Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016082/seat-gas-spring-korean-type_j2xiln.png' },
+  { name: 'SS Foldable Bottle Holder', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774012481/ss-foldable-bottle-holder_y27xbr.png' },
 ];
 
 const complianceItems = [
@@ -84,6 +101,27 @@ const technicalAdvantages = [
 ];
 
 const TrainProducts = () => {
+  const { category: categorySlug } = useParams();
+  const [selectedProduct, setSelectedProduct] = useState<{ name: string; image: string } | null>(null);
+  const [showAllProducts, setShowAllProducts] = useState(false);
+  const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setSelectedProduct(null);
+    };
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    if (categorySlug && sectionsRef.current[categorySlug]) {
+      setTimeout(() => {
+        sectionsRef.current[categorySlug]?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+  }, [categorySlug]);
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -157,6 +195,61 @@ const TrainProducts = () => {
         </div>
       </section>
 
+      {/* Specialized Coach Components Section */}
+      <section 
+        id="specialized-parts-and-assemblies"
+        ref={(el) => (sectionsRef.current['specialized-parts-and-assemblies'] = el)}
+        className="py-12 md:py-16 bg-muted/30"
+      >
+        <div className="container-custom">
+          <div className="mb-8">
+            <span className="text-accent font-semibold text-sm uppercase tracking-wider">Catalog</span>
+            <h2 className="font-display font-bold text-3xl text-primary mt-2 mb-2">
+              Specialized Coach Components
+            </h2>
+            <p className="text-muted-foreground max-w-2xl">
+              Precision-engineered interior fittings and assemblies for modern railway coaches
+            </p>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
+            {(showAllProducts ? railwayProducts : railwayProducts.slice(0, 12)).map((product, index) => (
+              <button
+                key={index}
+                className="group flex flex-col items-center text-center p-3 rounded-lg hover:bg-background transition-colors duration-200"
+                onClick={() => setSelectedProduct(product)}
+              >
+                <div className="w-full h-24 sm:h-32 bg-background rounded-md flex items-center justify-center overflow-hidden border border-border group-hover:border-primary/50 transition-colors">
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="max-w-[80%] max-h-[80%] object-contain p-2"
+                    onError={(e) => {
+                      const el = e.target as HTMLImageElement;
+                      el.src = '/placeholder.svg';
+                      el.onerror = null;
+                    }}
+                  />
+                </div>
+                <p className="mt-2 text-sm font-medium text-foreground group-hover:text-primary transition-colors leading-tight">
+                  {product.name}
+                </p>
+              </button>
+            ))}
+          </div>
+          {railwayProducts.length > 12 && (
+            <div className="mt-8 text-center">
+              <button
+                type="button"
+                onClick={() => setShowAllProducts((prev) => !prev)}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
+              >
+                {showAllProducts ? 'Show Less' : `View All Products (${railwayProducts.length})`}
+              </button>
+            </div>
+          )}
+        </div>
+      </section>
+
       {/* Industry Standards & Compliance Section */}
       <section className="py-12 md:py-16 bg-muted/30">
         <div className="container-custom">
@@ -211,9 +304,49 @@ const TrainProducts = () => {
         </div>
       </section>
 
+      {selectedProduct && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/80 p-4 md:p-8 flex items-center justify-center"
+          onClick={() => setSelectedProduct(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label={selectedProduct.name}
+        >
+          <div
+            className="relative w-full max-w-4xl max-h-[90vh] rounded-2xl bg-background p-3 md:p-5"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-3 right-3 z-10 rounded-full bg-background/90 p-2 border border-border hover:bg-muted transition-colors"
+              aria-label="Close image preview"
+            >
+              <X className="w-5 h-5 text-foreground" />
+            </button>
+            <div className="h-[65vh] md:h-[75vh] w-full bg-muted/20 rounded-xl overflow-hidden flex items-center justify-center">
+              <img
+                src={selectedProduct.image}
+                alt={selectedProduct.name}
+                className="max-h-full max-w-full object-contain"
+                onError={(e) => {
+                  const el = e.target as HTMLImageElement;
+                  el.src = '/placeholder.svg';
+                  el.onerror = null;
+                }}
+              />
+            </div>
+            <p className="font-display font-semibold text-base md:text-lg text-foreground mt-4 px-1">
+              {selectedProduct.name}
+            </p>
+          </div>
+        </div>
+      )}
+
       <Footer />
     </div>
   );
 };
 
 export default TrainProducts;
+
