@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { Bus, CheckCircle, Cog, Microscope, X } from 'lucide-react';
+import { Bus, CheckCircle, Cog, Microscope, X, Download, Loader2 } from 'lucide-react';
+import { generateCatalogPDF } from '@/utils/pdfGenerator';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import productBus from '@/assets/product-bus.jpg';
@@ -283,6 +284,19 @@ const BusProducts = () => {
   const [showAllShockupGasSprings, setShowAllShockupGasSprings] = useState(false);
   const [showAllBusBodyComponents, setShowAllBusBodyComponents] = useState(false);
   const [showAllSocketsHandles, setShowAllSocketsHandles] = useState(false);
+  
+  const [isDownloading, setIsDownloading] = useState<{ [key: string]: boolean }>({});
+
+  const handleDownload = async (categoryName: string, products: { name: string; image: string }[]) => {
+    setIsDownloading((prev) => ({ ...prev, [categoryName]: true }));
+    try {
+      await generateCatalogPDF(categoryName, products);
+    } catch (error) {
+      console.error('Download error:', error);
+    } finally {
+      setIsDownloading((prev) => ({ ...prev, [categoryName]: false }));
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -406,13 +420,26 @@ const BusProducts = () => {
               </button>
             ))}
           </div>
-          <div className="mt-8 text-center">
+          <div className="mt-8 flex flex-wrap justify-center gap-4">
             <button
               type="button"
               onClick={() => setShowAllAraiIcat((prev) => !prev)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
             >
               {showAllAraiIcat ? 'Show Less' : `View All Products (${araiIcatProducts.length})`}
+            </button>
+            <button
+              type="button"
+              onClick={() => handleDownload('ARAI-ICAT Approved Components', araiIcatProducts)}
+              disabled={isDownloading['ARAI-ICAT Approved Components']}
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+            >
+              {isDownloading['ARAI-ICAT Approved Components'] ? (
+                <Loader2 className="w-5 h-5 animate-spin" />
+              ) : (
+                <Download className="w-5 h-5" />
+              )}
+              Download Catalog
             </button>
           </div>
         </div>
@@ -510,13 +537,26 @@ const BusProducts = () => {
             ))}
           </div>
           {seatPartsProducts.length > 4 && (
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 type="button"
                 onClick={() => setShowAllSeatParts((prev) => !prev)}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllSeatParts ? 'Show Less' : `View All Products (${seatPartsProducts.length})`}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDownload('Seat Parts & Accessories', seatPartsProducts)}
+                disabled={isDownloading['Seat Parts & Accessories']}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isDownloading['Seat Parts & Accessories'] ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Download className="w-5 h-5" />
+                )}
+                Download Catalog
               </button>
             </div>
           )}
@@ -568,13 +608,26 @@ const BusProducts = () => {
             ))}
           </div>
           {shockupGasSpringsProducts.length > 4 && (
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 type="button"
                 onClick={() => setShowAllShockupGasSprings((prev) => !prev)}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllShockupGasSprings ? 'Show Less' : `View All Products (${shockupGasSpringsProducts.length})`}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDownload('Shockup Sir & Gas Springs', shockupGasSpringsProducts)}
+                disabled={isDownloading['Shockup Sir & Gas Springs']}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isDownloading['Shockup Sir & Gas Springs'] ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Download className="w-5 h-5" />
+                )}
+                Download Catalog
               </button>
             </div>
           )}
@@ -626,13 +679,26 @@ const BusProducts = () => {
             ))}
           </div>
           {busBodyComponentsProducts.length > 4 && (
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 type="button"
                 onClick={() => setShowAllBusBodyComponents((prev) => !prev)}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllBusBodyComponents ? 'Show Less' : `View All Products (${busBodyComponentsProducts.length})`}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDownload('Bus Body Components', busBodyComponentsProducts)}
+                disabled={isDownloading['Bus Body Components']}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isDownloading['Bus Body Components'] ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Download className="w-5 h-5" />
+                )}
+                Download Catalog
               </button>
             </div>
           )}
@@ -684,13 +750,26 @@ const BusProducts = () => {
             ))}
           </div>
           {socketsHandlesProducts.length > 4 && (
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 type="button"
                 onClick={() => setShowAllSocketsHandles((prev) => !prev)}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllSocketsHandles ? 'Show Less' : `View All Products (${socketsHandlesProducts.length})`}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleDownload('Sockets & Handles', socketsHandlesProducts)}
+                disabled={isDownloading['Sockets & Handles']}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isDownloading['Sockets & Handles'] ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Download className="w-5 h-5" />
+                )}
+                Download Catalog
               </button>
             </div>
           )}

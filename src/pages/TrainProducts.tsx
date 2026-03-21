@@ -1,42 +1,11 @@
 import { useEffect, useState, useRef } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones, X } from 'lucide-react';
+import { useParams } from 'react-router-dom';
+import { Train, Award, Star, CheckCircle, Microscope, Wrench, ClipboardCheck, Truck, Headphones, X, Download, Loader2 } from 'lucide-react';
+import { generateCatalogPDF } from '@/utils/pdfGenerator';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import heroRailway from '@/assets/RAILWAY-PHOTO.jpg';
 
-const trainCategories = [
-  {
-    name: 'Bogie Assemblies',
-    slug: 'bogie-assemblies',
-    description: 'Complete bogie frames, wheel sets, and axle box assemblies',
-  },
-  {
-    name: 'Coupling Systems',
-    slug: 'coupling-systems',
-    description: 'AAR couplers, draft gear, yokes, and knuckle assemblies',
-  },
-  {
-    name: 'Brake Systems',
-    slug: 'brake-systems',
-    description: 'Brake shoes, cylinders, slack adjusters, and control valves',
-  },
-  {
-    name: 'Safety Equipment',
-    slug: 'safety-equipment',
-    description: 'Emergency systems, signaling components, and safety devices',
-  },
-  {
-    name: 'Specialized Parts and Assemblies',
-    slug: 'specialized-parts-and-assemblies',
-    description: 'Custom engineered components for specific railway applications',
-  },
-  {
-    name: 'Miscellaneous Components',
-    slug: 'miscellaneous-components',
-    description: 'Springs and bolts, wear plates, fasteners, gaskets and seals',
-  },
-];
 
 const railwayProducts = [
   { name: 'PU Armpad Blue/Green', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077247/pu-armpad-blue-green_cjeaku.png' },
@@ -106,6 +75,19 @@ const TrainProducts = () => {
   const [showAllProducts, setShowAllProducts] = useState(false);
   const sectionsRef = useRef<{ [key: string]: HTMLElement | null }>({});
 
+  const [isDownloading, setIsDownloading] = useState(false);
+
+  const handleDownload = async () => {
+    setIsDownloading(true);
+    try {
+      await generateCatalogPDF('Specialized Coach Components', railwayProducts);
+    } catch (error) {
+      console.error('Download error:', error);
+    } finally {
+      setIsDownloading(false);
+    }
+  };
+
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') setSelectedProduct(null);
@@ -170,30 +152,6 @@ const TrainProducts = () => {
         </div>
       </section>
 
-      {/* Categories Grid */}
-      <section className="py-12 md:py-16">
-        <div className="container-custom">
-          <h2 className="font-display font-bold text-2xl text-foreground mb-8">
-            Browse Categories
-          </h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {trainCategories.map((category) => (
-              <Link
-                key={category.slug}
-                to={`/products/train/${category.slug}`}
-                className="group card-industrial p-6 hover:border-accent/50 transition-all duration-300"
-              >
-                <h3 className="font-display font-semibold text-lg text-foreground mb-2 group-hover:text-accent transition-colors">
-                  {category.name}
-                </h3>
-                <p className="text-muted-foreground text-sm mb-4">
-                  {category.description}
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Specialized Coach Components Section */}
       <section 
@@ -237,13 +195,26 @@ const TrainProducts = () => {
             ))}
           </div>
           {railwayProducts.length > 12 && (
-            <div className="mt-8 text-center">
+            <div className="mt-8 flex flex-wrap justify-center gap-4">
               <button
                 type="button"
                 onClick={() => setShowAllProducts((prev) => !prev)}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border-2 border-accent text-accent font-semibold hover:bg-accent hover:text-white transition-all duration-300"
               >
                 {showAllProducts ? 'Show Less' : `View All Products (${railwayProducts.length})`}
+              </button>
+              <button
+                type="button"
+                onClick={handleDownload}
+                disabled={isDownloading}
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-accent text-white font-semibold hover:bg-accent/90 transition-all duration-300 disabled:opacity-50"
+              >
+                {isDownloading ? (
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                ) : (
+                  <Download className="w-5 h-5" />
+                )}
+                Download Catalog
               </button>
             </div>
           )}
