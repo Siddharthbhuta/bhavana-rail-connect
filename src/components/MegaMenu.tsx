@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Train, Bus, Users, Building2, Award } from 'lucide-react';
+import { Train, Bus, Building2, Award } from 'lucide-react';
 import busProducts from '@/assets/bus-products.jpg';
 import trainProducts from '@/assets/RAILWAY-PHOTO.jpg';
 
@@ -25,7 +25,6 @@ const trainCategories = [
 
 const aboutItems = [
   { name: 'Our Story', href: '/about', hash: '#story', icon: Building2, description: 'Learn about our journey' },
-  { name: 'Leadership Team', href: '/about', hash: '#team', icon: Users, description: 'Meet our experts' },
   { name: 'Certifications', href: '/about', hash: '#certifications', icon: Award, description: 'Quality standards' },
 ];
 
@@ -134,7 +133,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
       >
         <div className="bg-card border-b border-border shadow-2xl">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-            <div className="grid grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {aboutItems.map((item) => (
                 <Link
                   key={item.name}
