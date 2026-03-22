@@ -11,8 +11,7 @@ import {
   Heart, 
   Users, 
   Handshake, 
-  Leaf,
-  User
+  Leaf
 } from 'lucide-react';
 
 // Import certificate images
@@ -64,22 +63,6 @@ const About = () => {
       icon: Leaf,
       title: 'Sustainability',
       description: 'We are committed to environmentally responsible practices in all our manufacturing processes.',
-    },
-  ];
-
-  // Leadership team - Rakesh Mehta and Vipul Mehta
-  const leadershipTeam = [
-    {
-      name: 'Rakesh Mehta',
-      position: 'Partner',
-      image: null, // Add image: import rakeshImage from '@/assets/rakesh-mehta.jpg' and set here
-      bio: 'Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.',
-    },
-    {
-      name: 'Vipul Mehta',
-      position: 'Partner',
-      image: null, // Add image: import vipulImage from '@/assets/vipul-mehta.jpg' and set here
-      bio: 'Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.',
     },
   ];
 
@@ -183,60 +166,6 @@ const About = () => {
                   To be the most trusted and preferred supplier of bus and railway components in India. We envision a future where innovation and quality drive our growth, and our products contribute to safer and more efficient transportation across the nation.
                 </p>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Leadership Team Section */}
-        <section id="team" className="py-12 md:py-16 bg-muted/30 scroll-mt-24 md:scroll-mt-28">
-          <div className="container-custom">
-            <div className="text-center mb-12">
-              <span className="text-accent font-semibold text-sm uppercase tracking-wider">
-                Meet Our Team
-              </span>
-              <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2">
-                Leadership Team
-              </h2>
-              <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                Our experienced leadership team drives innovation and excellence across all operations.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-              {leadershipTeam.map((member, index) => (
-                <div 
-                  key={index}
-                  className="bg-card rounded-xl shadow-sm overflow-hidden hover:shadow-md transition-shadow"
-                >
-                  {/* Placeholder for team member photo */}
-                  <div className="h-48 bg-muted flex items-center justify-center">
-                    {member.image ? (
-                      <img 
-                        src={member.image} 
-                        alt={member.name}
-                        className="w-full h-full object-cover"
-                      />
-                    ) : (
-                      <User className="w-20 h-20 text-muted-foreground/30" />
-                    )}
-                  </div>
-                  <div className="p-6 text-center">
-                    <h3 className="font-display text-lg font-bold text-foreground">
-                      {member.name}
-                    </h3>
-                    <p className="text-accent font-medium text-sm mb-2">
-                      {member.position}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="max-w-3xl mx-auto mt-6 bg-card rounded-xl shadow-sm border border-border p-6 text-center">
-              <p className="text-muted-foreground text-base leading-relaxed">
-                With over 30+ years of experience in the bus body and railway coach component industry,
-                Rakesh and Vipul lead business development, client relations, manufacturing operations and quality assurance ensuring that every product meets the highest standards.
-              </p>
             </div>
           </div>
         </section>

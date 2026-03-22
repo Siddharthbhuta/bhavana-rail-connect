@@ -13,12 +13,7 @@ const busCategories = [
 ];
 
 const trainCategories = [
-  'Bogie Assemblies',
-  'Coupling Systems',
-  'Brake Systems',
-  'Safety Equipment',
-  'Specialized Parts and Assemblies',
-  'Miscellaneous Components',
+  'Railway Coach Components',
 ];
 
 const ProductsSection = () => {
@@ -40,13 +35,13 @@ const ProductsSection = () => {
         {/* Products Grid */}
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-10">
-            {/* Bus Components Box */}
+            {/* Bus Body Components Box */}
             <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
               <div className="border-t-4 border-t-accent" />
               <Link to="/products/bus" className="block p-6 bg-card">
                 <img
                   src={busProducts}
-                  alt="Bus Components"
+                  alt="Bus Body Components"
                   className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="mt-4 flex items-center gap-2">
@@ -72,13 +67,13 @@ const ProductsSection = () => {
               </div>
             </div>
 
-            {/* Train Components Box */}
+            {/* Railway Components Box */}
             <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
               <div className="border-t-4 border-t-accent" />
               <Link to="/products/train" className="block p-6 bg-card">
                 <img
                   src={trainProducts}
-                  alt="Train Components"
+                  alt="Railway Components"
                   className="w-full h-64 object-contain transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="mt-4 flex items-center gap-2">

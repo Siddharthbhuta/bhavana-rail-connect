@@ -20,12 +20,7 @@ const busCategories = [
 ];
 
 const trainCategories = [
-  'Bogie Assemblies',
-  'Coupling Systems',
-  'Brake Systems',
-  'Safety Equipment',
-  'Specialized Parts and Assemblies',
-  'Miscellaneous Components',
+  'Railway Coach Components',
 ];
 
 const aboutItems = [
@@ -45,12 +40,12 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
         <div className="bg-card border-b border-border shadow-2xl">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Bus Components Box */}
+              {/* Bus Body Components Box */}
               <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/bus" onClick={onClose} className="block relative h-52 overflow-hidden">
                   <img
                     src={busProducts}
-                    alt="Bus Components"
+                    alt="Bus Body Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -59,7 +54,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                       <Bus className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="font-display font-bold text-lg text-white">
-                      Bus Components
+                      Bus Body Components
                     </h3>
                   </div>
                 </Link>
@@ -81,12 +76,12 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                 </div>
               </div>
 
-              {/* Train Components Box */}
+              {/* Railway Components Box */}
               <div className="group rounded-xl border border-border overflow-hidden hover:border-accent/50 transition-all duration-300 hover:shadow-lg">
                 <Link to="/products/train" onClick={onClose} className="block relative h-52 overflow-hidden">
                   <img
                     src={trainProducts}
-                    alt="Train Components"
+                    alt="Railway Components"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent" />
@@ -95,7 +90,7 @@ const MegaMenu = ({ type, onMenuEnter, onMenuLeave, onClose }: MegaMenuProps) =>
                       <Train className="w-5 h-5 text-white" />
                     </div>
                     <h3 className="font-display font-bold text-lg text-white">
-                      Train Components
+                      Railway Components
                     </h3>
                   </div>
                 </Link>

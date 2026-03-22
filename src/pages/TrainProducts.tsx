@@ -8,24 +8,23 @@ import heroRailway from '@/assets/RAILWAY-PHOTO.jpg';
 
 
 const railwayProducts = [
-  { name: 'PU Armpad Blue/Green', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077247/pu-armpad-blue-green_cjeaku.png' },
-  { name: 'PU Berth Safety Rail', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077233/pu-berth-safety-rail_fa2wwp.png' },
   { name: 'Arm Rest LHB', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077228/arm-rest-lhb_tbqhp6.png' },
-  { name: 'Aluminium Snack Table', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077227/aluminium-snack-table_hy93fb.png' },
-  { name: 'Snack Tray Knob', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774149033/snack-tray-knob_vy7gl3.png' },
-  { name: 'Seat Levers LH/RH', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/seat-levers-lh-rh_qdc2jb.png' },
-  { name: 'Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/foot-rest_drrno4.png' },
-  { name: 'PU Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016090/pu-foot-rest_fa5un0.png' },
-  { name: 'PVC Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016073/foot-rest-pvc_qn5imi.png' },
-  { name: 'Aluminium Side Panel LHB', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077225/aluminium-side-panel-lhb_ll8mk4.png' },
-  { name: 'Seat Lever Small', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077222/seat-lever-small_gdhs0y.png' },
-  { name: 'Horizontal Square Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073693/horizontal-square-socket-open_rfndpg.png' },
+  { name: 'PU Armpad Blue/Green', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077247/pu-armpad-blue-green_cjeaku.png' },
   { name: 'PU Pad Dolphin 40mm', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016079/pu-pad-dolphin-40mm_xz8uar.png' },
   { name: 'PU Pad Maharani 50mm', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016076/pu-pad-maharani-50mm_uxphrf.png' },
   { name: 'PU Pad Haritha Latest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016076/pu-pad-haritha-latest_a3pdfa.png' },
+  { name: 'Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/foot-rest_drrno4.png' },
+  { name: 'PU Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016090/pu-foot-rest_fa5un0.png' },
+  { name: 'PVC Foot Rest', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016073/foot-rest-pvc_qn5imi.png' },
+  { name: 'Seat Levers LH/RH', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077226/seat-levers-lh-rh_qdc2jb.png' },
+  { name: 'Seat Lever Small', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077222/seat-lever-small_gdhs0y.png' },
   { name: 'Seat Gas Spring TT', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016090/seat-gas-spring-tt_ysiyk1.png' },
   { name: 'Seat Gas Spring', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016084/seat-gas-spring_v88gat.png' },
   { name: 'Seat Gas Spring Korean Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016082/seat-gas-spring-korean-type_j2xiln.png' },
+  { name: 'Aluminium Snack Table', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077227/aluminium-snack-table_hy93fb.png' },
+  { name: 'Snack Tray Knob', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774149033/snack-tray-knob_vy7gl3.png' },
+  { name: 'Aluminium Side Panel LHB', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077225/aluminium-side-panel-lhb_ll8mk4.png' },
+  { name: 'PU Berth Safety Rail', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774077233/pu-berth-safety-rail_fa2wwp.png' },
   { name: 'SS Foldable Bottle Holder', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774012481/ss-foldable-bottle-holder_y27xbr.png' },
 ];
 
@@ -119,7 +118,7 @@ const TrainProducts = () => {
         <div className="absolute inset-0">
           <img
             src={heroRailway}
-            alt="Train Components"
+            alt="Railway Components"
             className="w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-background via-background/90 to-background" />
@@ -131,7 +130,7 @@ const TrainProducts = () => {
             </div>
             <div>
               <h1 className="font-display font-bold text-4xl md:text-5xl text-foreground">
-                Train Components
+                Railway Components
               </h1>
               <p className="text-muted-foreground mt-2">
                 Precision-engineered parts for railway rolling stock
