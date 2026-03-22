@@ -32,8 +32,8 @@ const ProductsSection = () => {
             Precision-Engineered Bus Body & Railway Coach Components
           </h2>
           <p className="text-muted-foreground text-lg">
-                  From bus body parts to railway coach components, 
-             We manufacture components meeting various specifications and standards.
+            From bus body parts to railway coach components,
+            We manufacture components meeting various specifications and standards.
           </p>
         </div>
 

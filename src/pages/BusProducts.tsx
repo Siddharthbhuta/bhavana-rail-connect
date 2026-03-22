@@ -157,6 +157,15 @@ const seatPartsProducts = [
   { name: 'Arm Rest Maharani 50mm', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016095/arm-rest-maharani-50mm_s6jliw.png' },
   { name: 'Seat Hook', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016097/seat-hook_km5nrf.png' },
   { name: 'Elastic Bottle Holder', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774016156/elastic-bottle-holder_etbixy.png' },
+  { name: 'Seat Belt Web Guide PVC', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147685/seat-belt-web-guide-pvc_oyqe2f.png' },
+  { name: 'Seat Slider Active and Passive with Handle', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147676/seat-slider-active-and-passive-with-handle_j8ifho.png' },
+  { name: 'Driver Seat Uno Minda', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147671/driver-seat-uno-minda_bgirym.png' },
+  { name: 'ABS Seat Back Cover Haritha Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147667/abs-seat-back-cover-haritha-type_tut2wb.png' },
+  { name: 'Seat Slider with Center Rod Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147664/seat-slider-with-center-rod-type_inen0r.png' },
+  { name: 'Seat Belt Two Point Manual', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147664/seat-belt-two-point-manual_foxhs1.png' },
+  { name: 'Seat Bottom', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147663/seat-bottom_ql5g9q.png' },
+  { name: 'Elastic Bottle Holder New', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147643/elastic-bottle-holder-new_uny7tg.png' },
+  { name: 'Elastic Bottle Holder T-Type', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774147637/elastic-bottle-holder-t-type_u6itxs.png' },
 ];
 
 const shockupGasSpringsProducts = [
@@ -236,6 +245,9 @@ const busBodyComponentsProducts = [
   { name: 'Door Safety Latch', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069578/door-safety-latch_nynbce.png' },
   { name: 'Heavy Duty Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069580/heavy-duty-lock_xdtoqu.png' },
   { name: 'Lorry Lock', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774069581/lorry-lock_eqqgma.png' },
+  { name: 'Brass Double Turn Horn Reed', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148802/brass-double-turn-horn-reed_xbsucx.png' },
+  { name: 'Driver Safety Latch With Stopper', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148764/driver-safety-latch-with-stopper_gcuvr7.png' },
+  { name: 'PVC Seat Button', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148746/pvc_seat_button_auhkqf.png' },
 ];
 
 const socketsHandlesProducts = [
@@ -255,6 +267,10 @@ const socketsHandlesProducts = [
   { name: 'Alu T-Socket 4-Hole', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073631/alu-t-socket-4-hole_c0begt.png' },
   { name: 'Window Guardrail Socket Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073629/window-guardrial-socket-open_trpe2n.png' },
   { name: 'Window Guardrail Socket Closed', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774073630/window-guardrial-socket-closed_ht2yqq.png' },
+  { name: 'Window Guardrial Socket 19mm 16mm Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148312/window-guardrial-socket-19mm-16mm-open_krv8um.png' },
+  { name: 'Window Guardrial Socket 19mm 16mm Close', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148321/window-guardrial-socket-19mm-16mm-close_stpltk.png' },
+  { name: 'Two Way Window Guardrial 19mm 16mm Open', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148301/two-way-window-guardrial-19mm-16mm-open_pait9i.png' },
+  { name: 'Two Way Window Guardrial 19mm 16mm Closed', image: 'https://res.cloudinary.com/dsue8by5f/image/upload/v1774148366/two-way-window-guardrial-19mm-16mm-closed_z8xpv7.png' },
 ];
 
 const BusProducts = () => {
