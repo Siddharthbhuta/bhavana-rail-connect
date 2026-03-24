@@ -3,16 +3,16 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const clientLogos = [
-  { name: 'Client 2', logo: '/clients/client2.jpg' },
-  { name: 'Client 3', logo: '/clients/client3.jpg' },
-  { name: 'Client 4', logo: '/clients/client4.jpg' },
-  { name: 'Client 5', logo: '/clients/client5.jpg' },
-  { name: 'Client 6', logo: '/clients/client6.jpg' },
-  { name: 'Client 7', logo: '/clients/client7.jpg' },
-  { name: 'Client 8', logo: '/clients/client8.jpg' },
-  { name: 'Client 9', logo: '/clients/client9.jpg' },
-  { name: 'Client 10', logo: '/clients/client10.jpg' },
-  { name: 'Client 13', logo: '/clients/client13.JPG' },
+  { name: 'Client 2', logo: '/clients-images/client2.jpg' },
+  { name: 'Client 3', logo: '/clients-images/client3.jpg' },
+  { name: 'Client 4', logo: '/clients-images/client4.jpg' },
+  { name: 'Client 5', logo: '/clients-images/client5.jpg' },
+  { name: 'Client 6', logo: '/clients-images/client6.jpg' },
+  { name: 'Client 7', logo: '/clients-images/client7.jpg' },
+  { name: 'Client 8', logo: '/clients-images/client8.jpg' },
+  { name: 'Client 9', logo: '/clients-images/client9.jpg' },
+  { name: 'Client 10', logo: '/clients-images/client10.jpg' },
+  { name: 'Client 13', logo: '/clients-images/client13.JPG' },
 ];
 
 const clientTypes = [
@@ -51,7 +51,7 @@ const Clients = () => {
           className="py-12 md:py-16"
           style={{
             backgroundImage:
-              "linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)), url('/clients/background-clients.png')",
+              "linear-gradient(rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.78)), url('/clients-images/background-clients.png')",
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
