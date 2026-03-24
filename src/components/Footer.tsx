@@ -96,17 +96,23 @@ const Footer = () => {
           {/* Contact */}
           <div>
             <h4 className="font-display font-semibold text-white mb-4">Contact</h4>
-            <ul className="space-y-4">
+            <ul className="space-y-4 -ml-2">
               <li className="flex items-start gap-3">
                 <Phone className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm">
-                  <span className="block">Rakesh Mehta- 8767333312 / 9821295540</span>
-                  <span className="block">Vipul Mehta- 9821502275 / 8080502275</span>
+                <span className="text-primary-foreground/80 text-sm space-y-1">
+                  <span className="block">
+                    <span className="block">Rakesh Mehta-</span>
+                    <span className="block">8767333312 / 9821295540</span>
+                  </span>
+                  <span className="block pt-1">
+                    <span className="block">Vipul Mehta-</span>
+                    <span className="block">9821502275 / 8080502275</span>
+                  </span>
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <Mail className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                <span className="text-primary-foreground/80 text-sm break-all">bhavana.trading@yahoo.com</span>
+                <span className="text-primary-foreground/80 text-sm whitespace-nowrap">bhavana.trading@yahoo.com</span>
               </li>
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
