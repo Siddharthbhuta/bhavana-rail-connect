@@ -14,7 +14,9 @@ import {
   Leaf
 } from 'lucide-react';
 
-import isoCertificate from '@/assets/certificates/iso-certificate.pdf';
+import isoCertificatePdf from '@/assets/certificates/iso-certificate.pdf';
+import isoCertificatePreview from '@/assets/certificates/iso-certificate-preview.png';
+import isoCertificateFull from '@/assets/certificates/iso-certificate-full.png';
 
 const About = () => {
   const { hash } = useLocation();
@@ -67,7 +69,9 @@ const About = () => {
     {
       name: 'ISO 9001:2000',
       description: 'Quality Management System Certification by Orion Registrar, Inc., USA',
-      image: isoCertificate,
+      previewImage: isoCertificatePreview,
+      fullImage: isoCertificateFull,
+      downloadUrl: isoCertificatePdf,
     },
   ];
 
@@ -208,7 +212,9 @@ const About = () => {
                   key={index}
                   name={cert.name}
                   description={cert.description}
-                  image={cert.image}
+                  previewImage={cert.previewImage}
+                  fullImage={cert.fullImage}
+                  downloadUrl={cert.downloadUrl}
                 />
               ))}
             </div>

@@ -1,40 +1,36 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Download, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import PdfPageRenderer from '@/components/PdfPageRenderer';
 
 interface CertificateCardProps {
   name: string;
   description: string;
-  image: string;
+  /** Thumbnail shown on the card */
+  previewImage: string;
+  /** High-resolution image shown in the maximize modal */
+  fullImage?: string;
+  /** PDF URL for optional download */
+  downloadUrl?: string;
 }
-
-const isPdf = (src: string) => src.toLowerCase().endsWith('.pdf');
 
 const downloadFileName = (name: string) =>
   `${name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}.pdf`;
 
-const CertificateCard = ({ name, description, image }: CertificateCardProps) => {
+const CertificateCard = ({
+  name,
+  description,
+  previewImage,
+  fullImage,
+  downloadUrl,
+}: CertificateCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const modalContentRef = useRef<HTMLDivElement>(null);
-  const [modalMaxWidth, setModalMaxWidth] = useState(900);
-  const pdf = isPdf(image);
+  const modalImage = fullImage ?? previewImage;
+  const pdfDownload = downloadUrl ?? previewImage;
 
   useEffect(() => {
     if (!isModalOpen) return;
-
-    const updateWidth = () => {
-      if (modalContentRef.current) {
-        setModalMaxWidth(modalContentRef.current.clientWidth - 8);
-      }
-    };
-
-    updateWidth();
-    window.addEventListener('resize', updateWidth);
     document.body.style.overflow = 'hidden';
-
     return () => {
-      window.removeEventListener('resize', updateWidth);
       document.body.style.overflow = '';
     };
   }, [isModalOpen]);
@@ -46,18 +42,15 @@ const CertificateCard = ({ name, description, image }: CertificateCardProps) => 
         onClick={() => setIsModalOpen(true)}
       >
         <div className="h-40 bg-muted/30 rounded-lg overflow-hidden mb-4 relative">
-          {pdf ? (
-            <PdfPageRenderer src={image} maxWidth={360} className="h-full" />
-          ) : (
-            <img
-              src={image}
-              alt={name}
-              className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-            />
-          )}
+          <img
+            src={previewImage}
+            alt={name}
+            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            loading="lazy"
+          />
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent pointer-events-none" />
           <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/10 transition-colors duration-300 flex items-center justify-center pointer-events-none">
-            <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium text-primary bg-white/90 px-3 py-1.5 rounded-full shadow-sm">
+            <span className="opacity-0 group-hover:opacity-100 sm:group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium text-primary bg-white/90 px-3 py-1.5 rounded-full shadow-sm max-sm:opacity-100">
               Click to view
             </span>
           </div>
@@ -82,10 +75,10 @@ const CertificateCard = ({ name, description, image }: CertificateCardProps) => 
                 {name}
               </h3>
               <div className="flex items-center gap-2 shrink-0">
-                {pdf && (
+                {downloadUrl && (
                   <Button variant="outline" size="sm" asChild>
                     <a
-                      href={image}
+                      href={pdfDownload}
                       download={downloadFileName(name)}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -104,19 +97,12 @@ const CertificateCard = ({ name, description, image }: CertificateCardProps) => 
               </div>
             </div>
 
-            <div
-              ref={modalContentRef}
-              className="overflow-auto flex-1 p-3 sm:p-5 min-h-0"
-            >
-              {pdf ? (
-                <PdfPageRenderer
-                  src={image}
-                  maxWidth={modalMaxWidth}
-                  className="flex justify-center"
-                />
-              ) : (
-                <img src={image} alt={name} className="w-full h-auto" />
-              )}
+            <div className="overflow-auto flex-1 p-3 sm:p-5 min-h-0 flex justify-center bg-muted/20">
+              <img
+                src={modalImage}
+                alt={name}
+                className="w-full max-w-full h-auto object-contain"
+              />
             </div>
           </div>
         </div>
