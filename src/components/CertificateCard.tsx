@@ -7,8 +7,11 @@ interface CertificateCardProps {
   image: string;
 }
 
+const isPdf = (src: string) => src.toLowerCase().endsWith('.pdf');
+
 const CertificateCard = ({ name, description, image }: CertificateCardProps) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const pdf = isPdf(image);
 
   return (
     <>
@@ -19,11 +22,19 @@ const CertificateCard = ({ name, description, image }: CertificateCardProps) => 
       >
         {/* Partial certificate preview - clipped */}
         <div className="h-40 bg-muted/30 rounded-lg overflow-hidden mb-4 relative">
-          <img
-            src={image}
-            alt={name}
-            className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
-          />
+          {pdf ? (
+            <iframe
+              src={`${image}#toolbar=0&navpanes=0`}
+              title={name}
+              className="w-full h-full pointer-events-none"
+            />
+          ) : (
+            <img
+              src={image}
+              alt={name}
+              className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-105"
+            />
+          )}
           {/* Gradient fade at bottom */}
           <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-card to-transparent" />
           {/* Hover overlay */}
@@ -59,13 +70,21 @@ const CertificateCard = ({ name, description, image }: CertificateCardProps) => 
               <X className="w-5 h-5 text-foreground" />
             </button>
 
-            {/* Full certificate image */}
+            {/* Full certificate */}
             <div className="overflow-auto max-h-[90vh]">
-              <img
-                src={image}
-                alt={name}
-                className="w-full h-auto"
-              />
+              {pdf ? (
+                <iframe
+                  src={image}
+                  title={name}
+                  className="w-full min-h-[70vh]"
+                />
+              ) : (
+                <img
+                  src={image}
+                  alt={name}
+                  className="w-full h-auto"
+                />
+              )}
             </div>
           </div>
         </div>

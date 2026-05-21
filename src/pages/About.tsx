@@ -14,10 +14,7 @@ import {
   Leaf
 } from 'lucide-react';
 
-// Import certificate images
-import cirtJ3214 from '@/assets/certificates/cirt-j3214.jpg';
-import cirtJ3215 from '@/assets/certificates/cirt-j3215.jpg';
-import isoCertificate from '@/assets/certificates/iso-certificate.jpg';
+import isoCertificate from '@/assets/certificates/iso-certificate.pdf';
 
 const About = () => {
   const { hash } = useLocation();
@@ -66,22 +63,11 @@ const About = () => {
     },
   ];
 
-  // Certificates with actual images
   const certificates = [
     {
       name: 'ISO 9001:2000',
       description: 'Quality Management System Certification by Orion Registrar, Inc., USA',
       image: isoCertificate,
-    },
-    {
-      name: 'CIRT Test Report - J3214',
-      description: 'Roof Grab Handle (Revolving Type) - Flammability Test Certification',
-      image: cirtJ3214,
-    },
-    {
-      name: 'CIRT Test Report - J3215',
-      description: 'First Aid Box - Flammability Test Certification',
-      image: cirtJ3215,
     },
   ];
 
@@ -216,7 +202,7 @@ const About = () => {
             </div>
             
             {/* Image Certificates */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-12">
+            <div className="grid grid-cols-1 gap-8 max-w-md mx-auto mb-12">
               {certificates.map((cert, index) => (
                 <CertificateCard
                   key={index}
